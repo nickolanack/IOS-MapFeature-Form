@@ -1,0 +1,6 @@
+framework module IOS_MapFeature_Form {
+  umbrella header "IOS-MapFeature-Form-umbrella.h"
+
+  export *
+  module * { export * }
+}

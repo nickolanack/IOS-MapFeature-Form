@@ -38,6 +38,9 @@ provides a configurable form interface for creating spatial features
   }
 
   s.dependency 'IOSQlite'
+  s.dependency 'ImageUtilities'
+  s.dependency 'HTMLParser'
+
   s.resources = ["*.storyboard", "Pod/Assets/*.png"] 
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '560419B0EB62462E226445D1'
+               BlueprintIdentifier = '572D0F09CEFD6114AF9D15A1'
                BlueprintName = 'IOS-MapFeature-Form'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'IOS_MapFeature_Form.framework'>
