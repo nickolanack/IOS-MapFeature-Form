@@ -1,0 +1,917 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E1EE947898EB34086076FF260E103AB /* IOS-MapFeature-Form-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 99D74EBFE8A8271C0BCBC6901EB7B1F8 /* IOS-MapFeature-Form-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		44C7F394BACFCD7F65E92EB6579A8993 /* Pods-IOS-MapFeature-Form_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C1C09586231DA61F4CCEE419E9593F12 /* Pods-IOS-MapFeature-Form_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D584739434DFAC63AEF441F19655F90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		7E2486593D95534C4D47BA7C12A4DBF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		7EF0E4A030E5BD5BCB64B71F7ABCC73F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		90B225E91CB7169800AFFD7E /* AttributeMultiTextFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 90B225D41CB7169800AFFD7E /* AttributeMultiTextFieldCell.h */; };
+		90B225EA1CB7169800AFFD7E /* AttributeMultiTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B225D51CB7169800AFFD7E /* AttributeMultiTextFieldCell.m */; };
+		90B225EB1CB7169800AFFD7E /* AttributeTextFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 90B225D61CB7169800AFFD7E /* AttributeTextFieldCell.h */; };
+		90B225EC1CB7169800AFFD7E /* AttributeTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B225D71CB7169800AFFD7E /* AttributeTextFieldCell.m */; };
+		90B225ED1CB7169800AFFD7E /* FeatureCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 90B225D81CB7169800AFFD7E /* FeatureCell.h */; };
+		90B225EE1CB7169800AFFD7E /* FeatureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B225D91CB7169800AFFD7E /* FeatureCell.m */; };
+		90B225EF1CB7169800AFFD7E /* FeatureDetailViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 90B225DA1CB7169800AFFD7E /* FeatureDetailViewController.h */; };
+		90B225F01CB7169800AFFD7E /* FeatureDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B225DB1CB7169800AFFD7E /* FeatureDetailViewController.m */; };
+		90B225F11CB7169800AFFD7E /* FeatureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 90B225DC1CB7169800AFFD7E /* FeatureViewController.h */; };
+		90B225F21CB7169800AFFD7E /* FeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B225DD1CB7169800AFFD7E /* FeatureViewController.m */; };
+		90B225F31CB7169800AFFD7E /* GFDelegateCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 90B225DE1CB7169800AFFD7E /* GFDelegateCell.h */; };
+		90B225F41CB7169800AFFD7E /* GFKeywordCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 90B225DF1CB7169800AFFD7E /* GFKeywordCell.h */; };
+		90B225F51CB7169800AFFD7E /* GFKeywordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B225E01CB7169800AFFD7E /* GFKeywordCell.m */; };
+		90B225F61CB7169800AFFD7E /* GFTitleCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 90B225E11CB7169800AFFD7E /* GFTitleCell.h */; };
+		90B225F71CB7169800AFFD7E /* GFTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B225E21CB7169800AFFD7E /* GFTitleCell.m */; };
+		90B225F81CB7169800AFFD7E /* MapFormDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 90B225E31CB7169800AFFD7E /* MapFormDelegate.h */; };
+		90B225F91CB7169800AFFD7E /* MenuViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 90B225E41CB7169800AFFD7E /* MenuViewController.h */; };
+		90B225FA1CB7169800AFFD7E /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B225E51CB7169800AFFD7E /* MenuViewController.m */; };
+		90B225FB1CB7169800AFFD7E /* StyledCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 90B225E61CB7169800AFFD7E /* StyledCollectionView.h */; };
+		90B225FC1CB7169800AFFD7E /* StyledCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B225E71CB7169800AFFD7E /* StyledCollectionView.m */; };
+		90B225FD1CB7169800AFFD7E /* StyleProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 90B225E81CB7169800AFFD7E /* StyleProvider.h */; };
+		90B226021CB7171600AFFD7E /* UserForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B225FF1CB7171600AFFD7E /* UserForm.storyboard */; };
+		90B226031CB7171600AFFD7E /* UserItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B226001CB7171600AFFD7E /* UserItemDetail.storyboard */; };
+		90B226041CB7171600AFFD7E /* UserLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B226011CB7171600AFFD7E /* UserLibrary.storyboard */; };
+		90B2260D1CB7174D00AFFD7E /* empty-image-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B226071CB7174D00AFFD7E /* empty-image-100.png */; };
+		90B2260E1CB7174D00AFFD7E /* feature-gray-40x63.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B226081CB7174D00AFFD7E /* feature-gray-40x63.png */; };
+		90B2260F1CB7174D00AFFD7E /* map-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B226091CB7174D00AFFD7E /* map-icon.png */; };
+		90B226101CB7174D00AFFD7E /* map-icon.xcf in Resources */ = {isa = PBXBuildFile; fileRef = 90B2260A1CB7174D00AFFD7E /* map-icon.xcf */; };
+		90B226111CB7174D00AFFD7E /* trash.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B2260B1CB7174D00AFFD7E /* trash.png */; };
+		90B226121CB7174D00AFFD7E /* xsm_edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B2260C1CB7174D00AFFD7E /* xsm_edit.png */; };
+		A2568052395FEAAFA3783B725AC30D90 /* Pods-IOS-MapFeature-Form_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D62237F433059DD1D38BA6F2AE688401 /* Pods-IOS-MapFeature-Form_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4BF2156DE283F8589E38F951625766 /* IOS-MapFeature-Form-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B6878BD2A82EC14A12AC1E49B9026B /* IOS-MapFeature-Form-dummy.m */; };
+		E2AF4A22D641E6B8A3328D006DFC75D5 /* Pods-IOS-MapFeature-Form_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D85CA2E0FC7CBF5D213EB8A879F4FF6D /* Pods-IOS-MapFeature-Form_Tests-dummy.m */; };
+		E5BD73F8B80D0DDE62CCD30EB6AA1895 /* IOS-MapFeature-Form.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F47DB0591F4536B8996FFD7F04662F02 /* IOS-MapFeature-Form.bundle */; };
+		FE466014414587156EBEF055D24EBBA9 /* Pods-IOS-MapFeature-Form_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CD83D77BC341D2894B83EE4C739316 /* Pods-IOS-MapFeature-Form_Example-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		578E4CEA2514DDC5D50E1468BAF71CD3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6EA813CF910D907650E4D2DBFB290E4A;
+			remoteInfo = "IOS-MapFeature-Form";
+		};
+		922DF0DBB81DEEB7F0D8247504342C08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74567480816C2574C95D78AA06978A03;
+			remoteInfo = "IOS-MapFeature-Form-IOS-MapFeature-Form";
+		};
+		AC314016A1B12EE4322CB267C5C53E2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6EA813CF910D907650E4D2DBFB290E4A;
+			remoteInfo = "IOS-MapFeature-Form";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04FF3822D8568ADC850201FD07CAD07B /* Pods-IOS-MapFeature-Form_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IOS-MapFeature-Form_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		0FAC1104F98C79E578C3D66CDEA4C3FC /* Pods_IOS_MapFeature_Form_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_MapFeature_Form_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1133268A4F8E1D152149993BD2FD5E4F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		143D48335CE2C15F629166B2934CF69A /* Pods-IOS-MapFeature-Form_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-IOS-MapFeature-Form_Example.modulemap"; sourceTree = "<group>"; };
+		187686CCBAC03E05BF868B1918795212 /* Pods_IOS_MapFeature_Form_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_MapFeature_Form_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20B52FEB161E9B9893EC2DD4BEF19BCB /* IOS_MapFeature_Form.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IOS_MapFeature_Form.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20C993EC9A8C0870AC6F34EBA52639F0 /* Pods-IOS-MapFeature-Form_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IOS-MapFeature-Form_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		21F86F238276F51F409BE645C6DBD6ED /* IOS-MapFeature-Form.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "IOS-MapFeature-Form.modulemap"; sourceTree = "<group>"; };
+		24A71FC7B8246444B8ADCDB07A2DCF13 /* Pods-IOS-MapFeature-Form_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-IOS-MapFeature-Form_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		45355236E099450C7938FB6A2A228791 /* Pods-IOS-MapFeature-Form_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IOS-MapFeature-Form_Example.release.xcconfig"; sourceTree = "<group>"; };
+		5536AC036A6F809FE9791DA34F7A6FD7 /* Pods-IOS-MapFeature-Form_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IOS-MapFeature-Form_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		58539A939417136E506CAEF2F98339A6 /* IOS-MapFeature-Form.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "IOS-MapFeature-Form.xcconfig"; sourceTree = "<group>"; };
+		5E90B6793F34D958AFEF03BF6097FF84 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60CC261DD4CC20BA9C427B5C670D851B /* Pods-IOS-MapFeature-Form_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IOS-MapFeature-Form_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		64ED2840A9163F7A20852CC1E3A16403 /* Pods-IOS-MapFeature-Form_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-IOS-MapFeature-Form_Tests-resources.sh"; sourceTree = "<group>"; };
+		6711C06EA054D85BFE9A31A8198C73BC /* IOS-MapFeature-Form-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IOS-MapFeature-Form-prefix.pch"; sourceTree = "<group>"; };
+		75302E63D35DFF3A5CEF1D56CD65A2F6 /* Pods-IOS-MapFeature-Form_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-IOS-MapFeature-Form_Example-frameworks.sh"; sourceTree = "<group>"; };
+		7C08A92BA20CA90999CDEC933F70063B /* Pods-IOS-MapFeature-Form_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-IOS-MapFeature-Form_Tests.modulemap"; sourceTree = "<group>"; };
+		7F40BA7FB062CDD7B664966A1055F012 /* Pods-IOS-MapFeature-Form_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-IOS-MapFeature-Form_Example-resources.sh"; sourceTree = "<group>"; };
+		90B225D41CB7169800AFFD7E /* AttributeMultiTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributeMultiTextFieldCell.h; sourceTree = "<group>"; };
+		90B225D51CB7169800AFFD7E /* AttributeMultiTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributeMultiTextFieldCell.m; sourceTree = "<group>"; };
+		90B225D61CB7169800AFFD7E /* AttributeTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributeTextFieldCell.h; sourceTree = "<group>"; };
+		90B225D71CB7169800AFFD7E /* AttributeTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributeTextFieldCell.m; sourceTree = "<group>"; };
+		90B225D81CB7169800AFFD7E /* FeatureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureCell.h; sourceTree = "<group>"; };
+		90B225D91CB7169800AFFD7E /* FeatureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureCell.m; sourceTree = "<group>"; };
+		90B225DA1CB7169800AFFD7E /* FeatureDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureDetailViewController.h; sourceTree = "<group>"; };
+		90B225DB1CB7169800AFFD7E /* FeatureDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureDetailViewController.m; sourceTree = "<group>"; };
+		90B225DC1CB7169800AFFD7E /* FeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureViewController.h; sourceTree = "<group>"; };
+		90B225DD1CB7169800AFFD7E /* FeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureViewController.m; sourceTree = "<group>"; };
+		90B225DE1CB7169800AFFD7E /* GFDelegateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFDelegateCell.h; sourceTree = "<group>"; };
+		90B225DF1CB7169800AFFD7E /* GFKeywordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFKeywordCell.h; sourceTree = "<group>"; };
+		90B225E01CB7169800AFFD7E /* GFKeywordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFKeywordCell.m; sourceTree = "<group>"; };
+		90B225E11CB7169800AFFD7E /* GFTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFTitleCell.h; sourceTree = "<group>"; };
+		90B225E21CB7169800AFFD7E /* GFTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFTitleCell.m; sourceTree = "<group>"; };
+		90B225E31CB7169800AFFD7E /* MapFormDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapFormDelegate.h; sourceTree = "<group>"; };
+		90B225E41CB7169800AFFD7E /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		90B225E51CB7169800AFFD7E /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		90B225E61CB7169800AFFD7E /* StyledCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyledCollectionView.h; sourceTree = "<group>"; };
+		90B225E71CB7169800AFFD7E /* StyledCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyledCollectionView.m; sourceTree = "<group>"; };
+		90B225E81CB7169800AFFD7E /* StyleProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleProvider.h; sourceTree = "<group>"; };
+		90B225FF1CB7171600AFFD7E /* UserForm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserForm.storyboard; sourceTree = "<group>"; };
+		90B226001CB7171600AFFD7E /* UserItemDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserItemDetail.storyboard; sourceTree = "<group>"; };
+		90B226011CB7171600AFFD7E /* UserLibrary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserLibrary.storyboard; sourceTree = "<group>"; };
+		90B226071CB7174D00AFFD7E /* empty-image-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "empty-image-100.png"; path = "Assets/empty-image-100.png"; sourceTree = "<group>"; };
+		90B226081CB7174D00AFFD7E /* feature-gray-40x63.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "feature-gray-40x63.png"; path = "Assets/feature-gray-40x63.png"; sourceTree = "<group>"; };
+		90B226091CB7174D00AFFD7E /* map-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "map-icon.png"; path = "Assets/map-icon.png"; sourceTree = "<group>"; };
+		90B2260A1CB7174D00AFFD7E /* map-icon.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "map-icon.xcf"; path = "Assets/map-icon.xcf"; sourceTree = "<group>"; };
+		90B2260B1CB7174D00AFFD7E /* trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trash.png; path = Assets/trash.png; sourceTree = "<group>"; };
+		90B2260C1CB7174D00AFFD7E /* xsm_edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = xsm_edit.png; path = Assets/xsm_edit.png; sourceTree = "<group>"; };
+		99D74EBFE8A8271C0BCBC6901EB7B1F8 /* IOS-MapFeature-Form-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IOS-MapFeature-Form-umbrella.h"; sourceTree = "<group>"; };
+		B2DDE7631070CA7C18A841412505A659 /* Pods-IOS-MapFeature-Form_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IOS-MapFeature-Form_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C1C09586231DA61F4CCEE419E9593F12 /* Pods-IOS-MapFeature-Form_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-IOS-MapFeature-Form_Example-umbrella.h"; sourceTree = "<group>"; };
+		C4CD83D77BC341D2894B83EE4C739316 /* Pods-IOS-MapFeature-Form_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IOS-MapFeature-Form_Example-dummy.m"; sourceTree = "<group>"; };
+		C7B6878BD2A82EC14A12AC1E49B9026B /* IOS-MapFeature-Form-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IOS-MapFeature-Form-dummy.m"; sourceTree = "<group>"; };
+		CBDC64AFE978B394C7297CDBB1C8FB18 /* Pods-IOS-MapFeature-Form_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-IOS-MapFeature-Form_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		D5839BDBBD46C69D9CF947AF4C6577FE /* Pods-IOS-MapFeature-Form_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-IOS-MapFeature-Form_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D62237F433059DD1D38BA6F2AE688401 /* Pods-IOS-MapFeature-Form_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-IOS-MapFeature-Form_Tests-umbrella.h"; sourceTree = "<group>"; };
+		D85CA2E0FC7CBF5D213EB8A879F4FF6D /* Pods-IOS-MapFeature-Form_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IOS-MapFeature-Form_Tests-dummy.m"; sourceTree = "<group>"; };
+		F47DB0591F4536B8996FFD7F04662F02 /* IOS-MapFeature-Form.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IOS-MapFeature-Form.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF3D803B309559A0F5421A8A75B647C6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21BCCC7A35B895137017C13A1814342B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EF0E4A030E5BD5BCB64B71F7ABCC73F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72D538D11B9117D1478137D5443B79EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E2486593D95534C4D47BA7C12A4DBF0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78737D76035B9644183D33F59BD82C58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D584739434DFAC63AEF441F19655F90 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF64CE0C8FE38391589D0520DDE72182 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0DAB16CE23653A7808CBB8D382D2DAE5 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B3537BE3A76E8297200865CE71CAFF8 /* IOS-MapFeature-Form */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		2B3537BE3A76E8297200865CE71CAFF8 /* IOS-MapFeature-Form */ = {
+			isa = PBXGroup;
+			children = (
+				E26D44B8E34CC9A314E85FE56E505B12 /* Pod */,
+				884254E5E846F56DE0DE9A2DB63DB5F3 /* Support Files */,
+			);
+			name = "IOS-MapFeature-Form";
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		31E589EC1619FCDBED265FB9448F7C34 /* Pods-IOS-MapFeature-Form_Example */ = {
+			isa = PBXGroup;
+			children = (
+				5E90B6793F34D958AFEF03BF6097FF84 /* Info.plist */,
+				143D48335CE2C15F629166B2934CF69A /* Pods-IOS-MapFeature-Form_Example.modulemap */,
+				D5839BDBBD46C69D9CF947AF4C6577FE /* Pods-IOS-MapFeature-Form_Example-acknowledgements.markdown */,
+				60CC261DD4CC20BA9C427B5C670D851B /* Pods-IOS-MapFeature-Form_Example-acknowledgements.plist */,
+				C4CD83D77BC341D2894B83EE4C739316 /* Pods-IOS-MapFeature-Form_Example-dummy.m */,
+				75302E63D35DFF3A5CEF1D56CD65A2F6 /* Pods-IOS-MapFeature-Form_Example-frameworks.sh */,
+				7F40BA7FB062CDD7B664966A1055F012 /* Pods-IOS-MapFeature-Form_Example-resources.sh */,
+				C1C09586231DA61F4CCEE419E9593F12 /* Pods-IOS-MapFeature-Form_Example-umbrella.h */,
+				B2DDE7631070CA7C18A841412505A659 /* Pods-IOS-MapFeature-Form_Example.debug.xcconfig */,
+				45355236E099450C7938FB6A2A228791 /* Pods-IOS-MapFeature-Form_Example.release.xcconfig */,
+			);
+			name = "Pods-IOS-MapFeature-Form_Example";
+			path = "Target Support Files/Pods-IOS-MapFeature-Form_Example";
+			sourceTree = "<group>";
+		};
+		419087600AA2D269955B3E985DC8D512 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				90B225D41CB7169800AFFD7E /* AttributeMultiTextFieldCell.h */,
+				90B225D51CB7169800AFFD7E /* AttributeMultiTextFieldCell.m */,
+				90B225D61CB7169800AFFD7E /* AttributeTextFieldCell.h */,
+				90B225D71CB7169800AFFD7E /* AttributeTextFieldCell.m */,
+				90B225D81CB7169800AFFD7E /* FeatureCell.h */,
+				90B225D91CB7169800AFFD7E /* FeatureCell.m */,
+				90B225DA1CB7169800AFFD7E /* FeatureDetailViewController.h */,
+				90B225DB1CB7169800AFFD7E /* FeatureDetailViewController.m */,
+				90B225DC1CB7169800AFFD7E /* FeatureViewController.h */,
+				90B225DD1CB7169800AFFD7E /* FeatureViewController.m */,
+				90B225DE1CB7169800AFFD7E /* GFDelegateCell.h */,
+				90B225DF1CB7169800AFFD7E /* GFKeywordCell.h */,
+				90B225E01CB7169800AFFD7E /* GFKeywordCell.m */,
+				90B225E11CB7169800AFFD7E /* GFTitleCell.h */,
+				90B225E21CB7169800AFFD7E /* GFTitleCell.m */,
+				90B225E31CB7169800AFFD7E /* MapFormDelegate.h */,
+				90B225E41CB7169800AFFD7E /* MenuViewController.h */,
+				90B225E51CB7169800AFFD7E /* MenuViewController.m */,
+				90B225E61CB7169800AFFD7E /* StyledCollectionView.h */,
+				90B225E71CB7169800AFFD7E /* StyledCollectionView.m */,
+				90B225E81CB7169800AFFD7E /* StyleProvider.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				0DAB16CE23653A7808CBB8D382D2DAE5 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				E8003D21C04C79B64A44C6B06E7882E7 /* Products */,
+				A76B9E9CA803C84DA6DC4D8E6D28C0A9 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		884254E5E846F56DE0DE9A2DB63DB5F3 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF3D803B309559A0F5421A8A75B647C6 /* Info.plist */,
+				21F86F238276F51F409BE645C6DBD6ED /* IOS-MapFeature-Form.modulemap */,
+				58539A939417136E506CAEF2F98339A6 /* IOS-MapFeature-Form.xcconfig */,
+				C7B6878BD2A82EC14A12AC1E49B9026B /* IOS-MapFeature-Form-dummy.m */,
+				6711C06EA054D85BFE9A31A8198C73BC /* IOS-MapFeature-Form-prefix.pch */,
+				99D74EBFE8A8271C0BCBC6901EB7B1F8 /* IOS-MapFeature-Form-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/IOS-MapFeature-Form";
+			sourceTree = "<group>";
+		};
+		90B225FE1CB716F900AFFD7E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				90B226051CB7172F00AFFD7E /* Pod */,
+				90B225FF1CB7171600AFFD7E /* UserForm.storyboard */,
+				90B226001CB7171600AFFD7E /* UserItemDetail.storyboard */,
+				90B226011CB7171600AFFD7E /* UserLibrary.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		90B226051CB7172F00AFFD7E /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				90B226061CB7173600AFFD7E /* Assets */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		90B226061CB7173600AFFD7E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				90B226071CB7174D00AFFD7E /* empty-image-100.png */,
+				90B226081CB7174D00AFFD7E /* feature-gray-40x63.png */,
+				90B226091CB7174D00AFFD7E /* map-icon.png */,
+				90B2260A1CB7174D00AFFD7E /* map-icon.xcf */,
+				90B2260B1CB7174D00AFFD7E /* trash.png */,
+				90B2260C1CB7174D00AFFD7E /* xsm_edit.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		A76B9E9CA803C84DA6DC4D8E6D28C0A9 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				31E589EC1619FCDBED265FB9448F7C34 /* Pods-IOS-MapFeature-Form_Example */,
+				A8DF6F11B0DC7949B9664BF77B51B088 /* Pods-IOS-MapFeature-Form_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A8DF6F11B0DC7949B9664BF77B51B088 /* Pods-IOS-MapFeature-Form_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1133268A4F8E1D152149993BD2FD5E4F /* Info.plist */,
+				7C08A92BA20CA90999CDEC933F70063B /* Pods-IOS-MapFeature-Form_Tests.modulemap */,
+				24A71FC7B8246444B8ADCDB07A2DCF13 /* Pods-IOS-MapFeature-Form_Tests-acknowledgements.markdown */,
+				5536AC036A6F809FE9791DA34F7A6FD7 /* Pods-IOS-MapFeature-Form_Tests-acknowledgements.plist */,
+				D85CA2E0FC7CBF5D213EB8A879F4FF6D /* Pods-IOS-MapFeature-Form_Tests-dummy.m */,
+				CBDC64AFE978B394C7297CDBB1C8FB18 /* Pods-IOS-MapFeature-Form_Tests-frameworks.sh */,
+				64ED2840A9163F7A20852CC1E3A16403 /* Pods-IOS-MapFeature-Form_Tests-resources.sh */,
+				D62237F433059DD1D38BA6F2AE688401 /* Pods-IOS-MapFeature-Form_Tests-umbrella.h */,
+				20C993EC9A8C0870AC6F34EBA52639F0 /* Pods-IOS-MapFeature-Form_Tests.debug.xcconfig */,
+				04FF3822D8568ADC850201FD07CAD07B /* Pods-IOS-MapFeature-Form_Tests.release.xcconfig */,
+			);
+			name = "Pods-IOS-MapFeature-Form_Tests";
+			path = "Target Support Files/Pods-IOS-MapFeature-Form_Tests";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E26D44B8E34CC9A314E85FE56E505B12 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				419087600AA2D269955B3E985DC8D512 /* Classes */,
+				90B225FE1CB716F900AFFD7E /* Resources */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		E8003D21C04C79B64A44C6B06E7882E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F47DB0591F4536B8996FFD7F04662F02 /* IOS-MapFeature-Form.bundle */,
+				20B52FEB161E9B9893EC2DD4BEF19BCB /* IOS_MapFeature_Form.framework */,
+				0FAC1104F98C79E578C3D66CDEA4C3FC /* Pods_IOS_MapFeature_Form_Example.framework */,
+				187686CCBAC03E05BF868B1918795212 /* Pods_IOS_MapFeature_Form_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		61E7C9AACF7C40FE7589BB4BEF75CE72 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2568052395FEAAFA3783B725AC30D90 /* Pods-IOS-MapFeature-Form_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F9E4471815D3C0B9680FD3A42408045 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E1EE947898EB34086076FF260E103AB /* IOS-MapFeature-Form-umbrella.h in Headers */,
+				90B225E91CB7169800AFFD7E /* AttributeMultiTextFieldCell.h in Headers */,
+				90B225F81CB7169800AFFD7E /* MapFormDelegate.h in Headers */,
+				90B225F61CB7169800AFFD7E /* GFTitleCell.h in Headers */,
+				90B225F31CB7169800AFFD7E /* GFDelegateCell.h in Headers */,
+				90B225FD1CB7169800AFFD7E /* StyleProvider.h in Headers */,
+				90B225EB1CB7169800AFFD7E /* AttributeTextFieldCell.h in Headers */,
+				90B225EF1CB7169800AFFD7E /* FeatureDetailViewController.h in Headers */,
+				90B225F11CB7169800AFFD7E /* FeatureViewController.h in Headers */,
+				90B225FB1CB7169800AFFD7E /* StyledCollectionView.h in Headers */,
+				90B225ED1CB7169800AFFD7E /* FeatureCell.h in Headers */,
+				90B225F41CB7169800AFFD7E /* GFKeywordCell.h in Headers */,
+				90B225F91CB7169800AFFD7E /* MenuViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD8360FBD88C6DD2CCEF4E22EE36F946 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44C7F394BACFCD7F65E92EB6579A8993 /* Pods-IOS-MapFeature-Form_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		22CD08FF7F2B59237BDE6B72CEBF9B30 /* Pods-IOS-MapFeature-Form_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46703C15BB85041839D5500AD75A996A /* Build configuration list for PBXNativeTarget "Pods-IOS-MapFeature-Form_Example" */;
+			buildPhases = (
+				09542C9AC0581098D42FD369B4C34430 /* Sources */,
+				21BCCC7A35B895137017C13A1814342B /* Frameworks */,
+				BD8360FBD88C6DD2CCEF4E22EE36F946 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B35071FE591BAAE940F5BBC24FCCDCCE /* PBXTargetDependency */,
+			);
+			name = "Pods-IOS-MapFeature-Form_Example";
+			productName = "Pods-IOS-MapFeature-Form_Example";
+			productReference = 0FAC1104F98C79E578C3D66CDEA4C3FC /* Pods_IOS_MapFeature_Form_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6EA813CF910D907650E4D2DBFB290E4A /* IOS-MapFeature-Form */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FEE92DB5A59C957F115533BE07C903B /* Build configuration list for PBXNativeTarget "IOS-MapFeature-Form" */;
+			buildPhases = (
+				90748AAFB94D5A345E947422D9AE5185 /* Sources */,
+				72D538D11B9117D1478137D5443B79EC /* Frameworks */,
+				C80E786C820E2E929DCABDFD10309847 /* Resources */,
+				8F9E4471815D3C0B9680FD3A42408045 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1439BC20EB31B2279AA5DB417757EA9 /* PBXTargetDependency */,
+			);
+			name = "IOS-MapFeature-Form";
+			productName = "IOS-MapFeature-Form";
+			productReference = 20B52FEB161E9B9893EC2DD4BEF19BCB /* IOS_MapFeature_Form.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		74567480816C2574C95D78AA06978A03 /* IOS-MapFeature-Form-IOS-MapFeature-Form */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAC557E79930A7096CAE0A54CF27F04C /* Build configuration list for PBXNativeTarget "IOS-MapFeature-Form-IOS-MapFeature-Form" */;
+			buildPhases = (
+				581A380219C897A3D11AA53466A0F0FE /* Sources */,
+				BF64CE0C8FE38391589D0520DDE72182 /* Frameworks */,
+				663518418F915974D5AB1A5E8A83FFAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IOS-MapFeature-Form-IOS-MapFeature-Form";
+			productName = "IOS-MapFeature-Form-IOS-MapFeature-Form";
+			productReference = F47DB0591F4536B8996FFD7F04662F02 /* IOS-MapFeature-Form.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		B6CEA19D1EA1DC7192CE313066595CFD /* Pods-IOS-MapFeature-Form_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38BCF99F23C1CBC813C5C836E555F930 /* Build configuration list for PBXNativeTarget "Pods-IOS-MapFeature-Form_Tests" */;
+			buildPhases = (
+				ECA266693D7E576443A1DA6E95EAEC78 /* Sources */,
+				78737D76035B9644183D33F59BD82C58 /* Frameworks */,
+				61E7C9AACF7C40FE7589BB4BEF75CE72 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B4E830C11FE1D9C118DEE80DAF2585D /* PBXTargetDependency */,
+			);
+			name = "Pods-IOS-MapFeature-Form_Tests";
+			productName = "Pods-IOS-MapFeature-Form_Tests";
+			productReference = 187686CCBAC03E05BF868B1918795212 /* Pods_IOS_MapFeature_Form_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = E8003D21C04C79B64A44C6B06E7882E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6EA813CF910D907650E4D2DBFB290E4A /* IOS-MapFeature-Form */,
+				74567480816C2574C95D78AA06978A03 /* IOS-MapFeature-Form-IOS-MapFeature-Form */,
+				22CD08FF7F2B59237BDE6B72CEBF9B30 /* Pods-IOS-MapFeature-Form_Example */,
+				B6CEA19D1EA1DC7192CE313066595CFD /* Pods-IOS-MapFeature-Form_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		663518418F915974D5AB1A5E8A83FFAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C80E786C820E2E929DCABDFD10309847 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5BD73F8B80D0DDE62CCD30EB6AA1895 /* IOS-MapFeature-Form.bundle in Resources */,
+				90B2260E1CB7174D00AFFD7E /* feature-gray-40x63.png in Resources */,
+				90B2260F1CB7174D00AFFD7E /* map-icon.png in Resources */,
+				90B226041CB7171600AFFD7E /* UserLibrary.storyboard in Resources */,
+				90B226021CB7171600AFFD7E /* UserForm.storyboard in Resources */,
+				90B2260D1CB7174D00AFFD7E /* empty-image-100.png in Resources */,
+				90B226121CB7174D00AFFD7E /* xsm_edit.png in Resources */,
+				90B226031CB7171600AFFD7E /* UserItemDetail.storyboard in Resources */,
+				90B226101CB7174D00AFFD7E /* map-icon.xcf in Resources */,
+				90B226111CB7174D00AFFD7E /* trash.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		09542C9AC0581098D42FD369B4C34430 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE466014414587156EBEF055D24EBBA9 /* Pods-IOS-MapFeature-Form_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		581A380219C897A3D11AA53466A0F0FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90748AAFB94D5A345E947422D9AE5185 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90B225F01CB7169800AFFD7E /* FeatureDetailViewController.m in Sources */,
+				90B225EE1CB7169800AFFD7E /* FeatureCell.m in Sources */,
+				90B225EC1CB7169800AFFD7E /* AttributeTextFieldCell.m in Sources */,
+				90B225EA1CB7169800AFFD7E /* AttributeMultiTextFieldCell.m in Sources */,
+				90B225F51CB7169800AFFD7E /* GFKeywordCell.m in Sources */,
+				CA4BF2156DE283F8589E38F951625766 /* IOS-MapFeature-Form-dummy.m in Sources */,
+				90B225F21CB7169800AFFD7E /* FeatureViewController.m in Sources */,
+				90B225FC1CB7169800AFFD7E /* StyledCollectionView.m in Sources */,
+				90B225F71CB7169800AFFD7E /* GFTitleCell.m in Sources */,
+				90B225FA1CB7169800AFFD7E /* MenuViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECA266693D7E576443A1DA6E95EAEC78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2AF4A22D641E6B8A3328D006DFC75D5 /* Pods-IOS-MapFeature-Form_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6B4E830C11FE1D9C118DEE80DAF2585D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "IOS-MapFeature-Form";
+			target = 6EA813CF910D907650E4D2DBFB290E4A /* IOS-MapFeature-Form */;
+			targetProxy = AC314016A1B12EE4322CB267C5C53E2A /* PBXContainerItemProxy */;
+		};
+		A1439BC20EB31B2279AA5DB417757EA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "IOS-MapFeature-Form-IOS-MapFeature-Form";
+			target = 74567480816C2574C95D78AA06978A03 /* IOS-MapFeature-Form-IOS-MapFeature-Form */;
+			targetProxy = 922DF0DBB81DEEB7F0D8247504342C08 /* PBXContainerItemProxy */;
+		};
+		B35071FE591BAAE940F5BBC24FCCDCCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "IOS-MapFeature-Form";
+			target = 6EA813CF910D907650E4D2DBFB290E4A /* IOS-MapFeature-Form */;
+			targetProxy = 578E4CEA2514DDC5D50E1468BAF71CD3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		03CA91998D6773EC5D02B3DB87B8353E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0B57334D6C23DADAA4F7D802A5760EB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		473B81EED5225E5820B52BBFD7F7BA5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2DDE7631070CA7C18A841412505A659 /* Pods-IOS-MapFeature-Form_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-IOS-MapFeature-Form_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-IOS-MapFeature-Form_Example/Pods-IOS-MapFeature-Form_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_IOS_MapFeature_Form_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4A2BC1491D901536D60EB41739DAF6DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58539A939417136E506CAEF2F98339A6 /* IOS-MapFeature-Form.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = "IOS-MapFeature-Form";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		60CE0FF8C0B0F345A9CC9AE21012B689 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58539A939417136E506CAEF2F98339A6 /* IOS-MapFeature-Form.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/IOS-MapFeature-Form/IOS-MapFeature-Form-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/IOS-MapFeature-Form/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/IOS-MapFeature-Form/IOS-MapFeature-Form.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = IOS_MapFeature_Form;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6AA06D542190F1D1D1BD31BC86ED9487 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20C993EC9A8C0870AC6F34EBA52639F0 /* Pods-IOS-MapFeature-Form_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-IOS-MapFeature-Form_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-IOS-MapFeature-Form_Tests/Pods-IOS-MapFeature-Form_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_IOS_MapFeature_Form_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		75CA9980BBBCAF57C6AF3B254078ADBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58539A939417136E506CAEF2F98339A6 /* IOS-MapFeature-Form.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/IOS-MapFeature-Form/IOS-MapFeature-Form-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/IOS-MapFeature-Form/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/IOS-MapFeature-Form/IOS-MapFeature-Form.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = IOS_MapFeature_Form;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		98761A20C22C2D8DE68F91CBC124BE0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04FF3822D8568ADC850201FD07CAD07B /* Pods-IOS-MapFeature-Form_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-IOS-MapFeature-Form_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-IOS-MapFeature-Form_Tests/Pods-IOS-MapFeature-Form_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_IOS_MapFeature_Form_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A255AD812632CC320171998DD4154B96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45355236E099450C7938FB6A2A228791 /* Pods-IOS-MapFeature-Form_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-IOS-MapFeature-Form_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-IOS-MapFeature-Form_Example/Pods-IOS-MapFeature-Form_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_IOS_MapFeature_Form_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F16F1A623C44C5A4E04A30F21B39219E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58539A939417136E506CAEF2F98339A6 /* IOS-MapFeature-Form.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = "IOS-MapFeature-Form";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1FEE92DB5A59C957F115533BE07C903B /* Build configuration list for PBXNativeTarget "IOS-MapFeature-Form" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75CA9980BBBCAF57C6AF3B254078ADBE /* Debug */,
+				60CE0FF8C0B0F345A9CC9AE21012B689 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B57334D6C23DADAA4F7D802A5760EB2 /* Debug */,
+				03CA91998D6773EC5D02B3DB87B8353E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38BCF99F23C1CBC813C5C836E555F930 /* Build configuration list for PBXNativeTarget "Pods-IOS-MapFeature-Form_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AA06D542190F1D1D1BD31BC86ED9487 /* Debug */,
+				98761A20C22C2D8DE68F91CBC124BE0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46703C15BB85041839D5500AD75A996A /* Build configuration list for PBXNativeTarget "Pods-IOS-MapFeature-Form_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				473B81EED5225E5820B52BBFD7F7BA5E /* Debug */,
+				A255AD812632CC320171998DD4154B96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAC557E79930A7096CAE0A54CF27F04C /* Build configuration list for PBXNativeTarget "IOS-MapFeature-Form-IOS-MapFeature-Form" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A2BC1491D901536D60EB41739DAF6DC /* Debug */,
+				F16F1A623C44C5A4E04A30F21B39219E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

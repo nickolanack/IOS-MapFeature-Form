@@ -1,0 +1,14 @@
+PODS:
+  - IOS-MapFeature-Form (0.1.0)
+
+DEPENDENCIES:
+  - IOS-MapFeature-Form (from `../`)
+
+EXTERNAL SOURCES:
+  IOS-MapFeature-Form:
+    :path: ../
+
+SPEC CHECKSUMS:
+  IOS-MapFeature-Form: c80dfce578d4ead6187f2bfa446a128eed2980c2
+
+COCOAPODS: 0.39.0

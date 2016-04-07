@@ -1,0 +1,34 @@
+{
+  "name": "IOS-MapFeature-Form",
+  "version": "0.1.0",
+  "summary": "An IOS Map feature form library",
+  "description": "provides a configurable form interface for creating spatial features",
+  "homepage": "https://github.com/nickolanack/IOS-MapFeature-Form",
+  "license": "MIT",
+  "authors": {
+    "nickolanack": "nickblackwell82@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/nickolanack/IOS-MapFeature-Form.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "IOS-MapFeature-Form": [
+      "Pod/Assets/*.png"
+    ]
+  },
+  "dependencies": {
+    "IOSQlite": [
+
+    ]
+  },
+  "resources": [
+    "*.storyboard",
+    "Pod/Assets/*.png"
+  ]
+}
