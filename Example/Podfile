@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'IOS-MapFeature-Form_Example', :exclusive => true do
+  pod 'IOS-MapFeature-Form', :path => '../'
+end
+
+target 'IOS-MapFeature-Form_Tests', :exclusive => true do
+  pod 'IOS-MapFeature-Form', :path => '../'
+
+  
+end
