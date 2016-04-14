@@ -10,4 +10,19 @@
 
 @implementation FeatureCell
 
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+
+    self=[super initWithCoder:aDecoder];
+    
+    self.layer.shadowColor = [UIColor blackColor].CGColor;
+
+    self.layer.shadowRadius = 2.0f;
+    self.layer.shadowOpacity = 0.5f;
+    self.layer.shadowOffset = CGSizeMake(0, 0);
+    self.layer.masksToBounds = NO;
+    return self;
+    
+
+}
+
 @end

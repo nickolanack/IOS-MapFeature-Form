@@ -11,5 +11,8 @@
 @interface FeatureCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIImageView *placemarkView;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *topLeftDetailLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *bottomRightDetailLabel;
 
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *nameLabel;
 @end

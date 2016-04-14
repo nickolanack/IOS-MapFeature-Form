@@ -86,7 +86,7 @@
     [self.collectionView addSubview:_refreshControl];
 
    
-    [self performSelector:@selector(refreshUsersFeaturesList) withObject:nil afterDelay:5.0];
+    [self performSelector:@selector(refreshUsersFeaturesList) withObject:nil afterDelay:0.5];
     
 }
 
@@ -180,12 +180,10 @@
     [self.emptyMsgUrl setHidden:false];
 }
 -(void)displayUpdatingMessage{
-    [self.updatingLabel setHidden:false];
-    //[self.updatingSpinner setHidden:false];
+
 }
 -(void)hideUpdatingMessage{
-    [self.updatingLabel setHidden:true];
-    //[self.updatingSpinner setHidden:true];
+
 }
 
 
@@ -271,9 +269,26 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
+    
+    
+    NSDictionary *meta=[_usersFeatures objectAtIndex:[_selectedFeaturePath row]];
+    
+    //-(void)menuForm:(MenuViewController *) view ItemWasTapped:(NSDictionary *)item;
+    if(self.delegate&&[self.delegate respondsToSelector:@selector(menuForm:ItemWasTapped:)]){
+        if(![self.delegate menuForm:self ItemWasTapped:meta]){
+            //if delegate returns false the default behavior will be ignored.
+            return;
+        }
+    }
+    
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"UserItemDetail" bundle:nil];
     UIViewController *myController = [storyboard instantiateInitialViewController];
-    [((FeatureDetailViewController *)myController) setMetadata:[_usersFeatures objectAtIndex:[_selectedFeaturePath row]]];
+    
+    
+    
+    
+    [((FeatureDetailViewController *)myController) setMetadata:meta];
     [self.navigationController pushViewController: myController animated:YES];
     
 }

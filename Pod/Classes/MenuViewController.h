@@ -22,8 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *emptyMsgLabel;
 @property (weak, nonatomic) IBOutlet UIButton *emptyMsgUrl;
 
-@property (weak, nonatomic) IBOutlet UILabel *updatingLabel;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *updatingSpinner;
+
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 

@@ -44,6 +44,8 @@
 
 -(bool)menuForm:(MenuViewController *) view NamedButtonWasTapped:(NSString *)string;
 
+-(bool)menuForm:(MenuViewController *) view ItemWasTapped:(NSDictionary *)item;
+
 
 -(NSDictionary *)menuFormParamtersForForm;
 
