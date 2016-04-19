@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MediaItemsTableViewCell : UITableViewCell
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *mediaImage;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *takePhotoButton;
 
 @end

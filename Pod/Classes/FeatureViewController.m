@@ -11,6 +11,7 @@
 #import "GFKeywordCell.h"
 #import "GFTitleCell.h"
 #import "MapFormDelegate.h"
+#import "MediaItemsTableViewCell.h"
 
 
 
@@ -45,6 +46,12 @@
         _location=[formData objectForKey:@"location"];
     }
 
+}
+
+- (IBAction)onTakePhotoCellButtonTap:(id)sender {
+    
+    [self takePhoto];
+    
 }
 
 -(NSDictionary *)getFormData{
@@ -128,7 +135,7 @@
     self.attributes=[[NSMutableDictionary alloc] initWithDictionary:@{@"keywords":@[]}];
     self.details=[[NSMutableDictionary alloc] initWithDictionary:@{@"name":@""}];
     
-    if([self startWithImagePicker]){
+    if((!self.media)&&[self startWithImagePicker]){
         [self takePhoto];
     }
     
@@ -176,50 +183,65 @@
     };
     
     
-    NSMutableDictionary *data=self.media;
-    NSLog(@"%s: %@",__PRETTY_FUNCTION__,data);
+    /**
+     * TODO provide support for uploading in the background.
+     */
     
-    if(data&&[[data objectForKey:UIImagePickerControllerMediaType] isEqualToString:@"public.image"]){
+    NSLog(@"%s: %@",__PRETTY_FUNCTION__,self.media);
+    
+    if([self hasImage]){
         
         /*
          * Upload Image Files
          */
         
-        if([data valueForKey:@"success"]==nil&&[data valueForKey:@"uploading"]==nil){
-            [data setValue:[NSNumber numberWithBool:true] forKey:@"uploading"];
+        [_formDelegate saveForm:[self getFormData] withImage:[self getImage] withProgressHandler:progressHandler andCompletion:completion];
             
-            [_formDelegate saveForm:[self getFormData] withImage:[data objectForKey:UIImagePickerControllerOriginalImage] withProgressHandler:progressHandler andCompletion:completion];
-            
-        }else if ([data valueForKey:@"uploading"]!=nil){
-            
-        }
-    }else if(data&&[[data objectForKey:UIImagePickerControllerMediaType] isEqualToString:@"public.movie"]){
-        
+
+    }else if([self hasVideo]){
         
         /*
          * Upload Video Files
          */
-        
-        
-        if([data valueForKey:@"success"]==nil&&[data valueForKey:@"uploading"]==nil){
-            
-            [_formDelegate  saveForm:[self getFormData] withVideo:[data objectForKey:UIImagePickerControllerMediaURL] withProgressHandler:progressHandler andCompletion:completion];
-        }
+        [_formDelegate  saveForm:[self getFormData] withVideo:[self getVideoUrl] withProgressHandler:progressHandler andCompletion:completion];
+
         
     }else{
     
         /*
          *Upload no media
          */
+        
         [_formDelegate  saveForm:[self getFormData] withCompletion:completion];
         
-    
     }
     
     
     
     
 }
+
+-(bool)hasImage{
+    if(self.media&&[[self.media objectForKey:UIImagePickerControllerMediaType] isEqualToString:@"public.image"]){
+        return true;
+    }
+    return false;
+}
+-(bool)hasVideo{
+    if(self.media&&[[self.media objectForKey:UIImagePickerControllerMediaType] isEqualToString:@"public.movie"]){
+        return true;
+    }
+    return false;
+}
+
+-(UIImage *)getImage{
+    return [self.media objectForKey:UIImagePickerControllerOriginalImage];
+}
+-(NSURL *)getVideoUrl{
+    return [self.media objectForKey:UIImagePickerControllerMediaURL];
+}
+
+
 
 -(void)displayUploadStatus{
     [self.label setHidden:false];
@@ -255,7 +277,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    int num=[self indexOfFirstAttribute]; //label, mediaCell title, description
+    int num=[self indexOfFirstAttribute]; //label, media, title, description
     
     for (NSString *attribute in [self attributeNames]) {
         num+=[self numberOfCellsForAttribute:attribute];
@@ -280,6 +302,7 @@
 -(NSArray *)attributeNames{
     return @[];// @[@"keywords"];
 }
+
 -(NSString *)cellIdentifierForAttribute:(NSString *)attribute{
     return @"keywordCell";
 }
@@ -292,23 +315,42 @@
     NSInteger row=[indexPath row];
     
     if(row==0){
+        /**
+         * Display a title sections. this section is not editable.
+         * TODO get label from delegate!
+         */
         cell= [tableView dequeueReusableCellWithIdentifier:@"labelCell"];
         [cell.textLabel setText:@"BCWF Violation Report"];
         
     }
     
-    if(row==3){
+    if(row==1){
+        
+        /**
+         * Media items cell, display selected media items.
+         */
+        
         cell= [tableView dequeueReusableCellWithIdentifier:@"mediaCell"];
         
-        if([cell isKindOfClass:[GFTitleCell class]]){
+        if([cell isKindOfClass:[MediaItemsTableViewCell class]]){
+            if([self hasImage]){
+                [((MediaItemsTableViewCell *) cell).mediaImage setImage:[self getImage]];
+                [((MediaItemsTableViewCell *) cell).takePhotoButton setTitle:@"Retake" forState:UIControlStateNormal];
+            }else{
             
+            }
             
             
         }
         
     }
     
-    if(row==3){
+    if(row==2){
+        
+        /**
+         * title/name field cell
+         */
+        
         cell= [tableView dequeueReusableCellWithIdentifier:@"titleCell"];
         
         if([cell isKindOfClass:[GFTitleCell class]]){
@@ -330,6 +372,11 @@
     }
     
     if(row==3){
+        
+        /**
+         * description field cell
+         */
+        
         cell= [tableView dequeueReusableCellWithIdentifier:@"titleCell"];
         
         if([cell isKindOfClass:[GFTitleCell class]]){
@@ -350,6 +397,15 @@
         }
         
     }
+    
+    
+    /**
+     * Attributes
+     * TODO: currently attributes take multiple cells. 
+     * I would like to replace this with single cells, but with multiple fields inside the cell.
+     * that would simplify this class. calculating indexes is now a bit to tricky
+     */
+    
     
     int firstAttributeIndex=[self indexOfFirstAttribute];
     
@@ -461,7 +517,7 @@
     self.media=dict;
     
     [self dismissViewControllerAnimated:YES completion:^{
-        
+        [self.tableView reloadData];
     }];
     
 }

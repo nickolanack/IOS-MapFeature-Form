@@ -29,5 +29,6 @@
 
 -(void)setFormParameters:(NSDictionary *)formParameters;
 -(void)setFormData:(NSDictionary *)formData;
+- (IBAction)onTakePhotoCellButtonTap:(id)sender;
 
 @end
