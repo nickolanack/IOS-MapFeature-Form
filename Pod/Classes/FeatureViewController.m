@@ -100,8 +100,14 @@
         _picker.navigationBarHidden = YES;
         _picker.toolbarHidden = YES;
         
+        
+        
         _picker.sourceType = UIImagePickerControllerSourceTypeCamera;
         //picker.showsCameraControls=YES;
+        
+        if([self allowLibraryPicker]&&((![self allowCameraPicker])||(![self preferCameraPicker]))){
+            _picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        }
         
         _picker.mediaTypes=[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
         _picker.delegate = self;
@@ -139,6 +145,27 @@
         [self takePhoto];
     }
     
+}
+
+-(bool)allowLibraryPicker{
+    if(_formParameters&&[_formParameters objectForKey:@"allowLibraryPicker"]){
+        return [[_formParameters objectForKey:@"allowLibraryPicker"] boolValue];
+    }
+    return false;
+}
+
+-(bool)allowCameraPicker{
+    if(_formParameters&&[_formParameters objectForKey:@"allowCameraPicker"]){
+        return [[_formParameters objectForKey:@"allowCameraPicker"] boolValue];
+    }
+    return true;
+}
+
+-(bool)preferCameraPicker{
+    if(_formParameters&&[_formParameters objectForKey:@"preferCameraPicker"]){
+        return [[_formParameters objectForKey:@"preferCameraPicker"] boolValue];
+    }
+    return true;
 }
 
 -(bool)startWithImagePicker{
@@ -333,12 +360,30 @@
         cell= [tableView dequeueReusableCellWithIdentifier:@"mediaCell"];
         
         if([cell isKindOfClass:[MediaItemsTableViewCell class]]){
+            
+            NSString *imageLabel=@"Take Photo";
+            
+            if(![self allowCameraPicker]){
+                imageLabel=@"Add Photo";
+            }
+            
             if([self hasImage]){
                 [((MediaItemsTableViewCell *) cell).mediaImage setImage:[self getImage]];
-                [((MediaItemsTableViewCell *) cell).takePhotoButton setTitle:@"Retake" forState:UIControlStateNormal];
-            }else{
-            
+                imageLabel=@"Retake";
+                
+                if(![self allowCameraPicker]){
+                    imageLabel=@"Change Photo";
+                }
+                
+                
             }
+            
+            
+           
+            [((MediaItemsTableViewCell *) cell).takePhotoButton setTitle:imageLabel forState:UIControlStateNormal];
+            
+            
+            
             
             
         }
