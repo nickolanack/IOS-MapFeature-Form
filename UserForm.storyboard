@@ -139,8 +139,27 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Yzk-Gd-HGN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="mediaCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="mediaCell" id="8l8-sg-DQN" customClass="mediaCell">
                                         <rect key="frame" x="0.0" y="355" width="600" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8l8-sg-DQN" id="gmA-9y-qIo">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6BW-mX-okd">
+                                                    <rect key="frame" x="20" y="4" width="65" height="61"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPk-QD-9Yy">
+                                                    <rect key="frame" x="558" y="24" width="22" height="22"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="oPk-QD-9Yy" secondAttribute="trailing" constant="12" id="RfU-b1-CJI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Yzk-Gd-HGN">
+                                        <rect key="frame" x="0.0" y="425" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yzk-Gd-HGN" id="q9k-PA-Cil">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
@@ -187,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NlO-VG-yPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1371" y="103"/>
+            <point key="canvasLocation" x="920" y="37"/>
         </scene>
     </scenes>
 </document>

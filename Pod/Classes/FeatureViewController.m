@@ -249,10 +249,13 @@
 
 #pragma mark UITableViewDataSource
 
+-(int)indexOfFirstAttribute{
+    return 4;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    int num=3; //label, title, description
+    int num=[self indexOfFirstAttribute]; //label, mediaCell title, description
     
     for (NSString *attribute in [self attributeNames]) {
         num+=[self numberOfCellsForAttribute:attribute];
@@ -261,6 +264,8 @@
     return num;
     
 }
+
+
 
 -(int)numberOfCellsForAttribute:(NSString *)attribute{
     
@@ -292,7 +297,18 @@
         
     }
     
-    if(row==1){
+    if(row==3){
+        cell= [tableView dequeueReusableCellWithIdentifier:@"mediaCell"];
+        
+        if([cell isKindOfClass:[GFTitleCell class]]){
+            
+            
+            
+        }
+        
+    }
+    
+    if(row==3){
         cell= [tableView dequeueReusableCellWithIdentifier:@"titleCell"];
         
         if([cell isKindOfClass:[GFTitleCell class]]){
@@ -313,7 +329,7 @@
         
     }
     
-    if(row==2){
+    if(row==3){
         cell= [tableView dequeueReusableCellWithIdentifier:@"titleCell"];
         
         if([cell isKindOfClass:[GFTitleCell class]]){
@@ -335,26 +351,28 @@
         
     }
     
-    if(row>2){
+    int firstAttributeIndex=[self indexOfFirstAttribute];
+    
+    if(row>=firstAttributeIndex){
         NSArray *keywords=[attributes objectForKey:@"keywords"];
         if(keywords!=nil&&[keywords count]){
             
-            if(row<(3+[keywords count])){
+            if(row<(firstAttributeIndex+[keywords count])){
                 
                 cell= [tableView dequeueReusableCellWithIdentifier:@"keywordLabelCell"];
                 if([cell isKindOfClass:[GFKeywordCell class]]){
-                    ((GFKeywordCell *) cell).value.text=[keywords objectAtIndex:[indexPath item]-3];
+                    ((GFKeywordCell *) cell).value.text=[keywords objectAtIndex:[indexPath item]-firstAttributeIndex];
                 }
                 
             }
             
-            if(row==(3+[keywords count])){
+            if(row==(firstAttributeIndex+[keywords count])){
                 cell= [tableView dequeueReusableCellWithIdentifier:@"keywordCell"];
             }
             
         }else{
             
-            if(row==3){
+            if(row==firstAttributeIndex){
                 cell= [tableView dequeueReusableCellWithIdentifier:@"keywordCell"];
             }
             
@@ -375,12 +393,15 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger row=indexPath.row;
+    
+    int firstAttributeIndex=[self indexOfFirstAttribute];
+    
     if(row==0)return 35;
-    if(row>2){
+    if(row>=firstAttributeIndex){
         NSArray *keywords=[attributes objectForKey:@"keywords"];
         if(keywords!=nil&&[keywords count]){
             
-            if(row<(3+[keywords count])){
+            if(row<(firstAttributeIndex+[keywords count])){
                 return 35;
             }
             
@@ -393,11 +414,15 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger row=indexPath.row;
+    
+    int firstAttributeIndex=[self indexOfFirstAttribute];
+
+    
     if(row>1){
         NSArray *keywords=[attributes objectForKey:@"keywords"];
         if(keywords!=nil&&[keywords count]){
             
-            if(row<(3+[keywords count])){
+            if(row<(firstAttributeIndex+[keywords count])){
                 return YES;
             }
             
@@ -411,7 +436,10 @@
     
     
     if(editingStyle==UITableViewCellEditingStyleDelete){
-        NSInteger index=indexPath.row-3;
+        
+        int firstAttributeIndex=[self indexOfFirstAttribute];
+        
+        NSInteger index=indexPath.row-firstAttributeIndex;
         NSMutableArray *a=[[NSMutableArray alloc] initWithArray:[attributes objectForKey:@"keywords"]];
         [a removeObjectAtIndex:index];
         [attributes setObject:[[NSArray alloc] initWithArray:a] forKey:@"keywords"];
