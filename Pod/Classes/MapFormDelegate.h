@@ -51,4 +51,16 @@
 
 -(NSString *)applicationUrl;
 
+-(bool)itemShouldBeEditable:(NSDictionary *) item;
+-(bool)itemShouldBeDeletable:(NSDictionary *) item;
+-(void)itemWasDeleted:(NSDictionary *) item;
+
+
+-(UIImage *)imageForItem:(NSDictionary *) item;
+
+
+
+
+
+
 @end

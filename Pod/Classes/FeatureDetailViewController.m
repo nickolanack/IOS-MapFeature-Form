@@ -32,29 +32,24 @@
     }
         
     
-    NSArray *images=[HTMLParser ParseImageUrls:[metadata objectForKey:@"description"]];
-    if([images count]){
-        
-        NSString *image=[images objectAtIndex:0];
-        if([image rangeOfString:@"http" options:NSCaseInsensitiveSearch].location!=0){
-            
-            if([_delegate respondsToSelector:@selector(applicationUrl)]){
-                NSString *url=[_delegate applicationUrl];
-                image= [url stringByAppendingString:[@"/" stringByAppendingString:image]];
-            }else{
-                @throw [[NSException alloc] initWithName:@"Unknown Application Url" reason:@"Application delegate should implement MapFormDelegate method: applicationUrl" userInfo:nil];
-            }
-            
-           // GeoliveServer *s=[GeoliveServer SharedInstance];
-           // image= [s.server stringByAppendingString:[@"/" stringByAppendingString:image]];
-            
+    
+    
+    
+    if([_delegate respondsToSelector:@selector(itemShouldBeDeletable:)]){
+        if(!([_delegate itemShouldBeDeletable:metadata])){
+            [self.deleteButton setAlpha:0.2];
         }
-        
-        
-        
-        [ImageUtilities CachedImageFromUrl:image completion:^(UIImage *image){
-            [self.imageView setImage: [ImageUtilities ThumbnailImage:image Width:200 AndHeight:200]];
-        }];
+    }else{
+        [self.deleteButton setAlpha:0.2];
+    }
+    
+    
+    if([_delegate respondsToSelector:@selector(itemShouldBeEditable::)]){
+        if(!([_delegate itemShouldBeEditable:metadata])){
+            [self.editButton setAlpha:0.2];
+        }
+    }else{
+        [self.editButton setAlpha:0.2];
     }
 }
 
@@ -76,12 +71,28 @@
 
 - (IBAction)onDeleteButtonTap:(id)sender {
     
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Delete this photo"
+    if([_delegate respondsToSelector:@selector(itemShouldBeDeletable:)]){
+        if((![_delegate itemShouldBeDeletable:metadata])){
+            return;
+        }
+    }
+    
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Delete this report"
                                                                    message:@"Are you sure you want to delete this marker permanently."
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* deleteAction = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {}];
+                                                          handler:^(UIAlertAction * action) {
+                                                          
+                                                              if(![_delegate respondsToSelector:@selector(itemWasDeleted:)]){
+                                                                  @throw [[NSException alloc] initWithName:@"Expected Delegate Method: itemWasDeleted" reason:@"Delegate must implement: itemWasDeleted, becuase it implemented and returned true at least once for: itemShouldBeDeletable" userInfo:nil];
+                                                              }
+                                                              
+                                                              [_delegate itemWasDeleted:metadata];
+                                                              
+                                                          
+                                                          }];
     [alert addAction:deleteAction];
     
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault

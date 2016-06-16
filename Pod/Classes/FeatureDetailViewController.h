@@ -14,5 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 - (IBAction)onDeleteButtonTap:(id)sender;
 
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *deleteButton;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *editButton;
 
 @end
