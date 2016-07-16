@@ -25,6 +25,7 @@
 
 @property NSDictionary *formParameters;
 
+
 @end
 
 @implementation FeatureViewController
@@ -59,7 +60,7 @@
     NSDictionary *formData=@{
                              @"name":[self.details objectForKey:@"name"]?[self.details objectForKey:@"name"]:@"",
                              @"description":[self.details objectForKey:@"description"]?[self.details objectForKey:@"description"]:@"",
-                             @"attributes":self.attributes?self.attributes:@{},
+                             @"attributes":self.attributes?self.attributes:@{}, //deprecated!
                              @"location":_location
                              };
     return formData;
@@ -68,6 +69,10 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    
+    
+    
+    
     self.navigationItem.hidesBackButton=true;
     self.tableView.editing=true;
     
@@ -92,27 +97,7 @@
     }
     
     
-    if(!self.picker){
-        
-        _picker = [[UIImagePickerController alloc] init];
-        
-        //picker.wantsFullScreenLayout = YES;
-        _picker.navigationBarHidden = YES;
-        _picker.toolbarHidden = YES;
-        
-        
-        
-        _picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        //picker.showsCameraControls=YES;
-        
-        if([self allowLibraryPicker]&&((![self allowCameraPicker])||(![self preferCameraPicker]))){
-            _picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        }
-        
-        _picker.mediaTypes=[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
-        _picker.delegate = self;
-        
-    }
+   
     
     if(!_location){
         
@@ -144,6 +129,9 @@
     if((!self.media)&&[self startWithImagePicker]){
         [self takePhoto];
     }
+    
+    
+    [self registerForKeyboardNotifications];
     
 }
 
@@ -298,40 +286,49 @@
 
 #pragma mark UITableViewDataSource
 
+
 -(int)indexOfFirstAttribute{
     return 4;
 }
 
+
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    int num=[self indexOfFirstAttribute]; //label, media, title, description
-    
-    for (NSString *attribute in [self attributeNames]) {
-        num+=[self numberOfCellsForAttribute:attribute];
-    }
-    
-    return num;
+    return [self getFieldMetadataArray].count;
     
 }
 
 
+-(NSArray *)getFieldMetadataArray{
 
--(int)numberOfCellsForAttribute:(NSString *)attribute{
+
     
-    NSArray *values=[attributes objectForKey:attribute];
-    if(values){
-        return 1+values.count;
-    }
-    return 1;
-    
-}
+    return @[
+              @{
+                  @"identifier":@"labelCell",
+                  @"value":@"BCWF Violation Report"
+                },
+              @{
+                  @"identifier":@"mediaCell",
+                },
+              @{
+                  @"identifier":@"titleCell",
+                  @"field":@"name",
+                  @"value":@"",
+                   @"placeholder":@"violation type",
+                  @"focus":@""
+                  },
+              @{
+                  @"identifier":@"titleCell",
+                  @"field":@"description",
+                  @"placeholder":@"description",
+                  @"value":@""
+                  }
+              
+            ];
 
--(NSArray *)attributeNames{
-    return @[];// @[@"keywords"];
-}
-
--(NSString *)cellIdentifierForAttribute:(NSString *)attribute{
-    return @"keywordCell";
 }
 
 
@@ -341,23 +338,28 @@
     UITableViewCell *cell=nil;
     NSInteger row=[indexPath row];
     
-    if(row==0){
-        /**
-         * Display a title sections. this section is not editable.
-         * TODO get label from delegate!
-         */
-        cell= [tableView dequeueReusableCellWithIdentifier:@"labelCell"];
-        [cell.textLabel setText:@"BCWF Violation Report"];
-        
+    
+    NSDictionary *fieldMetadata=(NSDictionary *)[[self getFieldMetadataArray] objectAtIndex:row];
+    
+    
+    cell= [tableView dequeueReusableCellWithIdentifier:[fieldMetadata objectForKey:@"identifier"]];
+    
+    if([cell conformsToProtocol:@protocol(GFDelegateCell)]){
+        [((id<GFDelegateCell>)cell) setDelegate:self];
+        [((id<GFDelegateCell>)cell) setTableView:tableView];
     }
     
-    if(row==1){
+    
+    if ([cell conformsToProtocol:@protocol(FeatureField)]) {
         
-        /**
-         * Media items cell, display selected media items.
-         */
+        id<FeatureField> field=cell;
+       
+        [field setFieldParameters:fieldMetadata];
+ 
+       
         
-        cell= [tableView dequeueReusableCellWithIdentifier:@"mediaCell"];
+    }else{
+        
         
         if([cell isKindOfClass:[MediaItemsTableViewCell class]]){
             
@@ -379,28 +381,32 @@
             }
             
             
-           
+            
             [((MediaItemsTableViewCell *) cell).takePhotoButton setTitle:imageLabel forState:UIControlStateNormal];
             
             
             
-            
+        }else{
+        
+            [cell.textLabel setText:[fieldMetadata objectForKey:@"value"]];
             
         }
-        
     }
     
+    
+    
+    
+    
+     
+    
+   
+    /*
     if(row==2){
         
-        /**
-         * title/name field cell
-         */
-        
-        cell= [tableView dequeueReusableCellWithIdentifier:@"titleCell"];
-        
+
+      
         if([cell isKindOfClass:[GFTitleCell class]]){
-            
-            [((GFTitleCell *) cell).titleField setPlaceholder:@"violation type"];
+  
             [((GFTitleCell *) cell) setFieldName:@"name"];
             NSString *name=nil;
             if(details!=nil){
@@ -409,7 +415,7 @@
             
             if(name==nil){
                 name=@"";
-                [((GFTitleCell *) cell).titleField becomeFirstResponder];
+               
             }
             [((GFTitleCell *) cell).titleField setText:name];
         }
@@ -418,15 +424,11 @@
     
     if(row==3){
         
-        /**
-         * description field cell
-         */
-        
-        cell= [tableView dequeueReusableCellWithIdentifier:@"titleCell"];
+  
+
         
         if([cell isKindOfClass:[GFTitleCell class]]){
-            
-            [((GFTitleCell *) cell).titleField setPlaceholder:@"violation description"];
+
             [((GFTitleCell *) cell) setFieldName:@"description"];
             
             NSString *name=nil;
@@ -442,50 +444,7 @@
         }
         
     }
-    
-    
-    /**
-     * Attributes
-     * TODO: currently attributes take multiple cells. 
-     * I would like to replace this with single cells, but with multiple fields inside the cell.
-     * that would simplify this class. calculating indexes is now a bit to tricky
-     */
-    
-    
-    int firstAttributeIndex=[self indexOfFirstAttribute];
-    
-    if(row>=firstAttributeIndex){
-        NSArray *keywords=[attributes objectForKey:@"keywords"];
-        if(keywords!=nil&&[keywords count]){
-            
-            if(row<(firstAttributeIndex+[keywords count])){
-                
-                cell= [tableView dequeueReusableCellWithIdentifier:@"keywordLabelCell"];
-                if([cell isKindOfClass:[GFKeywordCell class]]){
-                    ((GFKeywordCell *) cell).value.text=[keywords objectAtIndex:[indexPath item]-firstAttributeIndex];
-                }
-                
-            }
-            
-            if(row==(firstAttributeIndex+[keywords count])){
-                cell= [tableView dequeueReusableCellWithIdentifier:@"keywordCell"];
-            }
-            
-        }else{
-            
-            if(row==firstAttributeIndex){
-                cell= [tableView dequeueReusableCellWithIdentifier:@"keywordCell"];
-            }
-            
-        }
-    }
-    
-    
-    
-    if([cell conformsToProtocol:@protocol(GFDelegateCell)]){
-        [((id<GFDelegateCell>)cell) setDelegate:self];
-        [((id<GFDelegateCell>)cell) setTableView:tableView];
-    }
+    */
     
     
     return cell;
@@ -553,6 +512,30 @@
 
 -(void)takePhoto{
     
+    if(!_picker){
+   
+            
+        _picker = [[UIImagePickerController alloc] init];
+        
+        //picker.wantsFullScreenLayout = YES;
+        _picker.navigationBarHidden = YES;
+        _picker.toolbarHidden = YES;
+        
+        
+        
+        _picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        //picker.showsCameraControls=YES;
+        
+        if([self allowLibraryPicker]&&((![self allowCameraPicker])||(![self preferCameraPicker]))){
+            _picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        }
+        
+        _picker.mediaTypes=[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+        _picker.delegate = self;
+ 
+    
+    }
+    
     [self presentViewController:_picker animated:false completion:^{
         
     }];
@@ -565,6 +548,9 @@
         [self.tableView reloadData];
     }];
     
+    picker.delegate=nil;
+    picker=nil;
+    
 }
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     
@@ -572,6 +558,49 @@
         [self.navigationController popViewControllerAnimated:true];
     }
     
+    picker.delegate=nil;
+    picker=nil;
+    
 }
+
+
+#pragma mark Keyboard Helper
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+}
+
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+    _tableView.contentInset = contentInsets;
+    _tableView.scrollIndicatorInsets = contentInsets;
+    
+    // If active text field is hidden by keyboard, scroll it so it's visible
+    // Your application might not need or want this behavior.
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbSize.height;
+//    if (!CGRectContainsPoint(aRect, activeField.frame.origin) ) {
+//        CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y-kbSize.height);
+//        [_tableView setContentOffset:scrollPoint animated:YES];
+//    }
+}
+
+// Called when the UIKeyboardWillHideNotification is sent
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    _tableView.contentInset = contentInsets;
+    _tableView.scrollIndicatorInsets = contentInsets;
+}
+
 
 @end

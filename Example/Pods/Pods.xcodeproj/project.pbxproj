@@ -52,6 +52,7 @@
 		8C272C9ACBF0986AFCBBADA87405443B /* sqlite3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27754310261D43B109D3AC34F3B58A21 /* sqlite3.framework */; };
 		901013E71CC6A42700EB5D78 /* MediaItemsTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 901013E51CC6A42700EB5D78 /* MediaItemsTableViewCell.h */; };
 		901013E81CC6A42700EB5D78 /* MediaItemsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 901013E61CC6A42700EB5D78 /* MediaItemsTableViewCell.m */; };
+		90D120471D3AE1F5006BEC3E /* FeatureField.h in Headers */ = {isa = PBXBuildFile; fileRef = 90D120461D3AE1F5006BEC3E /* FeatureField.h */; };
 		92BD2CC622629855BD33C0B031E2983A /* feature-gray-40x63.png in Resources */ = {isa = PBXBuildFile; fileRef = 9991EFF13892E66ABC678894235A03F4 /* feature-gray-40x63.png */; };
 		94F78B53D89F609233D46CA0827DF181 /* map-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 02EB291ECE63D68CC2FDF232A5F35F91 /* map-icon.png */; };
 		97274ED093077A823B7201368491DF28 /* AttributeTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 075FEBC7DE4800DB200B8DDF54739088 /* AttributeTextFieldCell.m */; };
@@ -276,6 +277,7 @@
 		86643A2ECCA5C70771CEA99222331EF3 /* IOSQlite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IOSQlite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		901013E51CC6A42700EB5D78 /* MediaItemsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaItemsTableViewCell.h; sourceTree = "<group>"; };
 		901013E61CC6A42700EB5D78 /* MediaItemsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaItemsTableViewCell.m; sourceTree = "<group>"; };
+		90D120461D3AE1F5006BEC3E /* FeatureField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureField.h; sourceTree = "<group>"; };
 		95E967A8380704225FA65705B62DA5FD /* IOS-MapFeature-Form.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IOS-MapFeature-Form.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BF65633A36AF74C6F934FDF789690A /* GFKeywordCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GFKeywordCell.m; sourceTree = "<group>"; };
 		993610A290C481A234C19A831A8D0758 /* IOSQlite.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = IOSQlite.modulemap; sourceTree = "<group>"; };
@@ -612,6 +614,7 @@
 				901013E51CC6A42700EB5D78 /* MediaItemsTableViewCell.h */,
 				901013E61CC6A42700EB5D78 /* MediaItemsTableViewCell.m */,
 				33B8FCDEF7AC4BCBC9B61EE30D6327E8 /* StyleProvider.h */,
+				90D120461D3AE1F5006BEC3E /* FeatureField.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -805,6 +808,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90D120471D3AE1F5006BEC3E /* FeatureField.h in Headers */,
 				0B89471C1C4715126CEE13A49EB70C44 /* HTMLParser-umbrella.h in Headers */,
 				901013E71CC6A42700EB5D78 /* MediaItemsTableViewCell.h in Headers */,
 				D904C0669B3613B17D35EC6AB6E78D80 /* HTMLParser.h in Headers */,

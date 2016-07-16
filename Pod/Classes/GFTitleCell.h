@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "GFDelegateCell.h"
+#import "FeatureField.h"
 
-@interface GFTitleCell : UITableViewCell<GFDelegateCell, UITextFieldDelegate>
+@interface GFTitleCell : UITableViewCell<GFDelegateCell, UITextFieldDelegate, FeatureField>
 
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
 
