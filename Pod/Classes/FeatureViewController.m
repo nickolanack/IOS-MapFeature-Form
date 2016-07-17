@@ -314,10 +314,11 @@
                   @"identifier":@"mediaCell",
                 },
               @{
-                  @"identifier":@"titleCell",
+                  @"identifier":@"OptionsListField",
                   @"field":@"name",
-                  @"value":@"",
-                   @"placeholder":@"violation type",
+                  @"value":[NSNumber numberWithInteger:0],
+                  @"values":@[@"Violation Report",@"Natural Resource Violation"],
+                  @"placeholder":@"violation type",
                   @"focus":@""
                   },
               @{

@@ -12,26 +12,8 @@
 
 @synthesize delegate, tableView, fieldName;
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-   
-    fieldName=@"name";
-    
-    return self;
-}
 
-- (void)awakeFromNib
-{
-    // Initialization code
-}
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
 
 - (IBAction)onEditTitle:(id)sender {
     
@@ -64,7 +46,6 @@
 
     
     
-    
     NSString *value=nil;
     NSDictionary *details=self.delegate.details;
     
@@ -75,12 +56,6 @@
     if(value){
         [self.titleField setText:value];
     }
-    
-    
-//    NSString *focus=[fieldParameters objectForKey:@"focus"];
-//    if(focus){
-//        [self.titleField becomeFirstResponder];
-//    }
     
     
 }
