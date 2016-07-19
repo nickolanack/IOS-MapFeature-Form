@@ -308,10 +308,21 @@
     return @[
               @{
                   @"identifier":@"labelCell",
-                  @"value":@"BCWF Violation Report"
+                  @"value":@"BCWF Violation Report",
+                  @"rowHeight":[NSNumber numberWithFloat:35]
+                },
+              @{
+                  @"identifier":@"Title",
+                  @"value":@"Image or Video",
+                  @"rowHeight":[NSNumber numberWithFloat:35]
                 },
               @{
                   @"identifier":@"mediaCell",
+                },
+              @{
+                  @"identifier":@"Title",
+                  @"value":@"Violation Type",
+                  @"rowHeight":[NSNumber numberWithFloat:35]
                 },
               @{
                   @"identifier":@"OptionsListField",
@@ -322,9 +333,14 @@
                   @"focus":@""
                   },
               @{
+                  @"identifier":@"Title",
+                  @"value":@"Description",
+                  @"rowHeight":[NSNumber numberWithFloat:35]
+                  },
+              @{
                   @"identifier":@"titleCell",
                   @"field":@"description",
-                  @"placeholder":@"description",
+                  @"placeholder":@"add description",
                   @"value":@""
                   }
               
@@ -394,66 +410,19 @@
         }
     }
     
-    
-    
-    
-    
-     
-    
-   
-    /*
-    if(row==2){
-        
-
-      
-        if([cell isKindOfClass:[GFTitleCell class]]){
-  
-            [((GFTitleCell *) cell) setFieldName:@"name"];
-            NSString *name=nil;
-            if(details!=nil){
-                name=[details objectForKey:@"name"];
-            }
-            
-            if(name==nil){
-                name=@"";
-               
-            }
-            [((GFTitleCell *) cell).titleField setText:name];
-        }
-        
-    }
-    
-    if(row==3){
-        
-  
-
-        
-        if([cell isKindOfClass:[GFTitleCell class]]){
-
-            [((GFTitleCell *) cell) setFieldName:@"description"];
-            
-            NSString *name=nil;
-            if(details!=nil){
-                name=[details objectForKey:@"description"];
-            }
-            
-            if(name==nil){
-                name=@"";
-                //[((GFTitleCell *) cell).titleField becomeFirstResponder];
-            }
-            [((GFTitleCell *) cell).titleField setText:name];
-        }
-        
-    }
-    */
-    
-    
     return cell;
     
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger row=indexPath.row;
+    
+    
+    NSDictionary *fieldMetadata=(NSDictionary *)[[self getFieldMetadataArray] objectAtIndex:row];
+    NSNumber *height=[fieldMetadata objectForKey:@"rowHeight"];
+    if(height){
+        return [height floatValue];
+    }
     
     int firstAttributeIndex=[self indexOfFirstAttribute];
     
