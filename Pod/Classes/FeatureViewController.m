@@ -302,50 +302,70 @@
 
 
 -(NSArray *)getFieldMetadataArray{
-
-
+    
+    
     
     return @[
-              @{
-                  @"identifier":@"labelCell",
-                  @"value":@"BCWF Violation Report",
-                  @"rowHeight":[NSNumber numberWithFloat:35]
-                },
-              @{
-                  @"identifier":@"Title",
-                  @"value":@"Image or Video",
-                  @"rowHeight":[NSNumber numberWithFloat:35]
-                },
-              @{
-                  @"identifier":@"mediaCell",
-                },
-              @{
-                  @"identifier":@"Title",
-                  @"value":@"Violation Type",
-                  @"rowHeight":[NSNumber numberWithFloat:35]
-                },
-              @{
-                  @"identifier":@"OptionsListField",
-                  @"field":@"name",
-                  @"value":[NSNumber numberWithInteger:0],
-                  @"values":@[@"Violation Report",@"Natural Resource Violation"],
-                  @"placeholder":@"violation type",
-                  @"focus":@""
-                  },
-              @{
-                  @"identifier":@"Title",
-                  @"value":@"Description",
-                  @"rowHeight":[NSNumber numberWithFloat:35]
-                  },
-              @{
-                  @"identifier":@"titleCell",
-                  @"field":@"description",
-                  @"placeholder":@"add description",
-                  @"value":@""
-                  }
-              
-            ];
-
+             @{
+                 @"identifier":@"Heading",
+                 @"value":@"BCWF Violation Report",
+                 @"rowHeight":[NSNumber numberWithFloat:35]
+                 },
+             @{
+                 @"identifier":@"SubHeading",
+                 @"value":@"Image or Video",
+                 @"rowHeight":[NSNumber numberWithFloat:35]
+                 },
+             @{
+                 @"identifier":@"mediaCell",
+                 },
+             @{
+                 @"identifier":@"SubHeading",
+                 @"value":@"Violation Type",
+                 @"rowHeight":[NSNumber numberWithFloat:35]
+                 },
+             @{
+                 @"identifier":@"OptionsListField",
+                 @"field":@"name",
+                 @"value":[NSNumber numberWithInteger:0],
+                 @"values":@[@"Violation Report",@"Natural Resource Violation"],
+                 @"placeholder":@"violation type",
+                 @"rowHeight":[NSNumber numberWithFloat:120],
+                 @"focus":@""
+                 },
+             @{
+                 @"identifier":@"SubHeading",
+                 @"value":@"Details of Violation",
+                 @"rowHeight":[NSNumber numberWithFloat:35]
+                 },
+             @{
+                 @"identifier":@"TextField",
+                 @"field":@"description",
+                 @"placeholder":@"add description",
+                 @"value":@"",
+                 @"rowHeight":[NSNumber numberWithFloat:60],
+                 },
+             @{
+                 @"identifier":@"SwitchField",
+                 @"field":@"rappAttributes.inProgress",
+                 @"label":@"Is the violation taking place now",
+                 @"value":[NSNumber numberWithBool:false]
+                 },
+             @{
+                 @"identifier":@"SubHeading",
+                 @"value":@"Description of Suspect",
+                 @"rowHeight":[NSNumber numberWithFloat:35]
+                 },
+             @{
+                 @"identifier":@"TextField",
+                 @"field":@"rappAttributes.suspectDescription",
+                 @"placeholder":@"add description",
+                 @"value":@"",
+                 @"rowHeight":[NSNumber numberWithFloat:120],
+                 },
+             
+             ];
+    
 }
 
 
@@ -358,8 +378,11 @@
     
     NSDictionary *fieldMetadata=(NSDictionary *)[[self getFieldMetadataArray] objectAtIndex:row];
     
-    
-    cell= [tableView dequeueReusableCellWithIdentifier:[fieldMetadata objectForKey:@"identifier"]];
+    @try{
+        cell= [tableView dequeueReusableCellWithIdentifier:[fieldMetadata objectForKey:@"identifier"]];
+    } @catch(NSException *e){
+        @throw e;
+    }
     
     if([cell conformsToProtocol:@protocol(GFDelegateCell)]){
         [((id<GFDelegateCell>)cell) setDelegate:self];
@@ -370,10 +393,7 @@
     if ([cell conformsToProtocol:@protocol(FeatureField)]) {
         
         id<FeatureField> field=cell;
-       
         [field setFieldParameters:fieldMetadata];
- 
-       
         
     }else{
         
@@ -393,15 +413,10 @@
                 if(![self allowCameraPicker]){
                     imageLabel=@"Change Photo";
                 }
-                
-                
+
             }
             
-            
-            
             [((MediaItemsTableViewCell *) cell).takePhotoButton setTitle:imageLabel forState:UIControlStateNormal];
-            
-            
             
         }else{
         

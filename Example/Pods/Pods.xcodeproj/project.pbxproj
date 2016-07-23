@@ -55,6 +55,12 @@
 		902AA32C1D3B5A720092C349 /* OptionsListField.h in Headers */ = {isa = PBXBuildFile; fileRef = 902AA32A1D3B5A720092C349 /* OptionsListField.h */; };
 		902AA32D1D3B5A720092C349 /* OptionsListField.m in Sources */ = {isa = PBXBuildFile; fileRef = 902AA32B1D3B5A720092C349 /* OptionsListField.m */; };
 		90D120471D3AE1F5006BEC3E /* FeatureField.h in Headers */ = {isa = PBXBuildFile; fileRef = 90D120461D3AE1F5006BEC3E /* FeatureField.h */; };
+		90D1204E1D3EBDFF006BEC3E /* SwitchField.h in Headers */ = {isa = PBXBuildFile; fileRef = 90D1204C1D3EBDFF006BEC3E /* SwitchField.h */; };
+		90D1204F1D3EBDFF006BEC3E /* SwitchField.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D1204D1D3EBDFF006BEC3E /* SwitchField.m */; };
+		90D120521D3ECC04006BEC3E /* TextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 90D120501D3ECC04006BEC3E /* TextField.h */; };
+		90D120531D3ECC04006BEC3E /* TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D120511D3ECC04006BEC3E /* TextField.m */; };
+		90D1205A1D3ED140006BEC3E /* Subheading.h in Headers */ = {isa = PBXBuildFile; fileRef = 90D120581D3ED140006BEC3E /* Subheading.h */; };
+		90D1205B1D3ED140006BEC3E /* Subheading.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D120591D3ED140006BEC3E /* Subheading.m */; };
 		92BD2CC622629855BD33C0B031E2983A /* feature-gray-40x63.png in Resources */ = {isa = PBXBuildFile; fileRef = 9991EFF13892E66ABC678894235A03F4 /* feature-gray-40x63.png */; };
 		94F78B53D89F609233D46CA0827DF181 /* map-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 02EB291ECE63D68CC2FDF232A5F35F91 /* map-icon.png */; };
 		97274ED093077A823B7201368491DF28 /* AttributeTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 075FEBC7DE4800DB200B8DDF54739088 /* AttributeTextFieldCell.m */; };
@@ -282,6 +288,12 @@
 		902AA32A1D3B5A720092C349 /* OptionsListField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsListField.h; sourceTree = "<group>"; };
 		902AA32B1D3B5A720092C349 /* OptionsListField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsListField.m; sourceTree = "<group>"; };
 		90D120461D3AE1F5006BEC3E /* FeatureField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureField.h; sourceTree = "<group>"; };
+		90D1204C1D3EBDFF006BEC3E /* SwitchField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchField.h; sourceTree = "<group>"; };
+		90D1204D1D3EBDFF006BEC3E /* SwitchField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchField.m; sourceTree = "<group>"; };
+		90D120501D3ECC04006BEC3E /* TextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextField.h; sourceTree = "<group>"; };
+		90D120511D3ECC04006BEC3E /* TextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextField.m; sourceTree = "<group>"; };
+		90D120581D3ED140006BEC3E /* Subheading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subheading.h; sourceTree = "<group>"; };
+		90D120591D3ED140006BEC3E /* Subheading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subheading.m; sourceTree = "<group>"; };
 		95E967A8380704225FA65705B62DA5FD /* IOS-MapFeature-Form.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IOS-MapFeature-Form.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BF65633A36AF74C6F934FDF789690A /* GFKeywordCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GFKeywordCell.m; sourceTree = "<group>"; };
 		993610A290C481A234C19A831A8D0758 /* IOSQlite.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = IOSQlite.modulemap; sourceTree = "<group>"; };
@@ -595,6 +607,8 @@
 		87D27E93B471AE995A7D51B36C1531A8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				90D1204C1D3EBDFF006BEC3E /* SwitchField.h */,
+				90D1204D1D3EBDFF006BEC3E /* SwitchField.m */,
 				5C1A153F4CAF378E58BE9D6FC685C106 /* AttributeMultiTextFieldCell.h */,
 				D176533C746C4BAEFBCFC087C8BD61EA /* AttributeMultiTextFieldCell.m */,
 				35E9BEBD2905DA5C7077A665B32D5044 /* AttributeTextFieldCell.h */,
@@ -621,6 +635,10 @@
 				90D120461D3AE1F5006BEC3E /* FeatureField.h */,
 				902AA32A1D3B5A720092C349 /* OptionsListField.h */,
 				902AA32B1D3B5A720092C349 /* OptionsListField.m */,
+				90D120501D3ECC04006BEC3E /* TextField.h */,
+				90D120511D3ECC04006BEC3E /* TextField.m */,
+				90D120581D3ED140006BEC3E /* Subheading.h */,
+				90D120591D3ED140006BEC3E /* Subheading.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -818,7 +836,10 @@
 				90D120471D3AE1F5006BEC3E /* FeatureField.h in Headers */,
 				0B89471C1C4715126CEE13A49EB70C44 /* HTMLParser-umbrella.h in Headers */,
 				901013E71CC6A42700EB5D78 /* MediaItemsTableViewCell.h in Headers */,
+				90D1205A1D3ED140006BEC3E /* Subheading.h in Headers */,
 				D904C0669B3613B17D35EC6AB6E78D80 /* HTMLParser.h in Headers */,
+				90D120521D3ECC04006BEC3E /* TextField.h in Headers */,
+				90D1204E1D3EBDFF006BEC3E /* SwitchField.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1233,8 +1254,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90D1204F1D3EBDFF006BEC3E /* SwitchField.m in Sources */,
+				90D120531D3ECC04006BEC3E /* TextField.m in Sources */,
 				82C31F07CCA3C29BEAAF425C4973092A /* HTMLParser-dummy.m in Sources */,
 				902AA32D1D3B5A720092C349 /* OptionsListField.m in Sources */,
+				90D1205B1D3ED140006BEC3E /* Subheading.m in Sources */,
 				901013E81CC6A42700EB5D78 /* MediaItemsTableViewCell.m in Sources */,
 				77EB67A14B0E2D7CD57DE6DFCBC23983 /* HTMLParser.m in Sources */,
 			);

@@ -53,6 +53,10 @@
         value=[details objectForKey:fieldName];
     }
     
+    if(value==nil){
+        value=[fieldParameters objectForKey:@"value"];
+    }
+    
     if(value){
         [self.titleField setText:value];
     }

@@ -75,17 +75,17 @@
     [self.delegate.details setObject:[_values objectAtIndex:row] forKey:fieldName];
 }
 
-//- (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-//    return [_values objectAtIndex:row];
-//}
-
-
-- (nullable NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    NSString *title = [_values objectAtIndex:row];
-    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor blueColor]}];
-    
-    return attString;
-    
+- (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    return [_values objectAtIndex:row];
 }
+
+
+//- (nullable NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
+//{
+//    NSString *title = [_values objectAtIndex:row];
+//    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:0 green:122/255.0 blue:1.0 alpha:1.0]}];
+//    
+//    return attString;
+//    
+//}
 @end
