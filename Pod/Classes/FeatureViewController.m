@@ -25,6 +25,7 @@
 
 @property NSDictionary *formParameters;
 
+@property UIView *activeView;
 
 @end
 
@@ -36,7 +37,7 @@
 -(void)setFormParameters:(NSDictionary *)formParameters{
     
     if(_formParameters){
-        @throw [[NSException alloc] initWithName:@"Initialize Form Parameters Exception" reason:@"It is too late initialize form parameters now" userInfo:nil];
+        @throw [[NSException alloc] initWithName:@"Initialize Form Parameters Exception" reason:@"It is too late to initialize form parameters now" userInfo:nil];
     }
     _formParameters=[self checkFormParameters:formParameters];
 }
@@ -56,13 +57,10 @@
 }
 
 -(NSDictionary *)getFormData{
-
-    NSDictionary *formData=@{
-                             @"name":[self.details objectForKey:@"name"]?[self.details objectForKey:@"name"]:@"",
-                             @"description":[self.details objectForKey:@"description"]?[self.details objectForKey:@"description"]:@"",
-                             @"attributes":self.attributes?self.attributes:@{}, //deprecated!
-                             @"location":_location
-                             };
+    
+   NSMutableDictionary *formData= [[NSMutableDictionary alloc] initWithDictionary:self.details];
+   [formData setValue:_location forKey:@"location"];
+    
     return formData;
     
 
@@ -300,15 +298,12 @@
     
 }
 
+-(NSArray *)getDefaultFieldMetadataArray{
 
--(NSArray *)getFieldMetadataArray{
-    
-    
-    
     return @[
              @{
                  @"identifier":@"Heading",
-                 @"value":@"BCWF Violation Report",
+                 @"value":@"New Placemark",
                  @"rowHeight":[NSNumber numberWithFloat:35]
                  },
              @{
@@ -317,54 +312,55 @@
                  @"rowHeight":[NSNumber numberWithFloat:35]
                  },
              @{
-                 @"identifier":@"mediaCell",
+                 @"identifier":@"MediaField",
                  },
              @{
                  @"identifier":@"SubHeading",
-                 @"value":@"Violation Type",
+                 @"value":@"Name",
                  @"rowHeight":[NSNumber numberWithFloat:35]
                  },
              @{
-                 @"identifier":@"OptionsListField",
+                 @"identifier":@"TextField",
                  @"field":@"name",
-                 @"value":[NSNumber numberWithInteger:0],
-                 @"values":@[@"Violation Report",@"Natural Resource Violation"],
-                 @"placeholder":@"violation type",
-                 @"rowHeight":[NSNumber numberWithFloat:120],
-                 @"focus":@""
+                 @"placeholder":@"add a name",
+                 @"value":@"",
+                 @"rowHeight":[NSNumber numberWithFloat:60],
                  },
              @{
                  @"identifier":@"SubHeading",
-                 @"value":@"Details of Violation",
+                 @"value":@"Description",
                  @"rowHeight":[NSNumber numberWithFloat:35]
                  },
              @{
                  @"identifier":@"TextField",
                  @"field":@"description",
-                 @"placeholder":@"add description",
+                 @"placeholder":@"add a description",
                  @"value":@"",
                  @"rowHeight":[NSNumber numberWithFloat:60],
                  },
+             
              @{
-                 @"identifier":@"SwitchField",
-                 @"field":@"rappAttributes.inProgress",
-                 @"label":@"Is the violation taking place now",
-                 @"value":[NSNumber numberWithBool:false]
-                 },
-             @{
-                 @"identifier":@"SubHeading",
-                 @"value":@"Description of Suspect",
-                 @"rowHeight":[NSNumber numberWithFloat:35]
-                 },
-             @{
-                 @"identifier":@"TextField",
-                 @"field":@"rappAttributes.suspectDescription",
-                 @"placeholder":@"add description",
-                 @"value":@"",
+                 @"identifier":@"Space",
                  @"rowHeight":[NSNumber numberWithFloat:120],
                  },
              
              ];
+
+}
+
+-(NSArray *)getFieldMetadataArray{
+    
+    
+    if([_formDelegate respondsToSelector:@selector(menuFormFieldMetadata)]){
+        return [_formDelegate menuFormFieldMetadata];
+    }
+    
+    NSArray *formParametersFieldMetadataArray=[_formParameters objectForKey:@"fieldMetadata"];
+    if(formParametersFieldMetadataArray){
+        return formParametersFieldMetadataArray;
+    }
+    
+    return [self getDefaultFieldMetadataArray];
     
 }
 
@@ -420,13 +416,22 @@
             
         }else{
         
-            [cell.textLabel setText:[fieldMetadata objectForKey:@"value"]];
+            if(cell.textLabel){
+               [cell.textLabel setText:[fieldMetadata objectForKey:@"value"]]; 
+            }
             
         }
     }
     
     return cell;
     
+}
+
+
+- (nullable NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSLog(@"Active Cell");
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -560,6 +565,10 @@
                                                  name:UIKeyboardWillHideNotification object:nil];
 }
 
+-(void) setActiveView:(UIView *)view{
+    _activeView=view;
+}
+
 // Called when the UIKeyboardDidShowNotification is sent.
 - (void)keyboardWasShown:(NSNotification*)aNotification
 {
@@ -571,12 +580,17 @@
     
     // If active text field is hidden by keyboard, scroll it so it's visible
     // Your application might not need or want this behavior.
+    
     CGRect aRect = self.view.frame;
     aRect.size.height -= kbSize.height;
-//    if (!CGRectContainsPoint(aRect, activeField.frame.origin) ) {
-//        CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y-kbSize.height);
-//        [_tableView setContentOffset:scrollPoint animated:YES];
-//    }
+    
+    CGPoint offset=[self.view convertPoint:_activeView.frame.origin fromView:_activeView];
+    CGPoint origin=[self.tableView convertPoint:_activeView.frame.origin fromView:_activeView];
+    
+    if (!CGRectContainsPoint(aRect, origin) ) {
+        CGPoint scrollPoint = CGPointMake(0.0, origin.y-kbSize.height);
+        [_tableView setContentOffset:scrollPoint animated:YES];
+    }
 }
 
 // Called when the UIKeyboardWillHideNotification is sent

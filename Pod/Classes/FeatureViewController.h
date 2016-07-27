@@ -31,4 +31,7 @@
 -(void)setFormData:(NSDictionary *)formData;
 - (IBAction)onTakePhotoCellButtonTap:(id)sender;
 
+
+-(void) setActiveView:(UIView *)view;
+
 @end

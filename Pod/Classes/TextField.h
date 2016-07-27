@@ -10,9 +10,10 @@
 #import "GFDelegateCell.h"
 #import "FeatureField.h"
 
-@interface TextField : UITableViewCell<GFDelegateCell,UITextViewDelegate, FeatureField>
+@interface TextField : UITableViewCell<GFDelegateCell, UITextViewDelegate, FeatureField>
 
 @property NSString *fieldName;
 @property (unsafe_unretained, nonatomic) IBOutlet UITextView *textField;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *placeholder;
 
 @end

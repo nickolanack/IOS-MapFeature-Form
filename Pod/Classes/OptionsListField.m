@@ -56,7 +56,7 @@
     }
     
     
-    
+    self.optionsField.layer.cornerRadius = 5.0f;
     
     
 }

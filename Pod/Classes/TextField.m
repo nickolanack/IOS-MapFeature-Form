@@ -16,8 +16,6 @@
 
 -(void)setFieldParameters:(NSDictionary *) fieldParameters{
     
-    
-    
     [_textField setDelegate:self];
     
     NSString *field=[fieldParameters objectForKey:@"field"];
@@ -41,18 +39,50 @@
         [self.delegate.details setObject:value forKey:fieldName];
     }
     
+    
+    if(![self isEmpty]){
+        [self.placeholder setHidden:true];
+    }
+    
+    self.textField.layer.cornerRadius = 5.0f;
+    
 }
 
 - (void)textViewDidChange:(UITextView *)textView{
+    
     if([textView.text characterAtIndex:textView.text.length-1] =='\n'){
         [textView.inputView resignFirstResponder];
         [textView resignFirstResponder];
-      
-     
     }
+    
+    [self.delegate.details setObject:textView.text forKey:fieldName];
+    
 }
-- (BOOL)textViewShouldEndEditing:(UITextView *)textView{
 
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
+    
+    [self.delegate setActiveView:self.textField];
+    [self.placeholder setHidden:true];
+    return true;
+    
+}
+
+-(bool)isEmpty{
+    
+    NSString *text=[self.textField.text stringByTrimmingCharactersInSet:
+                    [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    if([text isEqualToString:@""]){
+        return true;
+    }
+    return false;
+}
+
+- (BOOL)textViewShouldEndEditing:(UITextView *)textView{
+    if([self isEmpty]){
+        [self.placeholder setHidden:false];
+    }
+    return true;
 }
 
 @end

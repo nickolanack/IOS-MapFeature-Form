@@ -14,6 +14,4 @@
 @property FeatureViewController *delegate;
 @property UITableView *tableView;
 
-
-
 @end
