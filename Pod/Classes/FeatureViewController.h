@@ -33,5 +33,6 @@
 
 
 -(void) setActiveView:(UIView *)view;
+@property (unsafe_unretained, nonatomic) IBOutlet UIView *spinningView;
 
 @end

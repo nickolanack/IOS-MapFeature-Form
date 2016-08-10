@@ -174,6 +174,8 @@
     
 
     [self displayUploadStatus];
+    [((UIButton *)sender) setEnabled:false];
+    [self.spinningView setHidden:false];
     
     FeatureViewController * __block me=self;
     
