@@ -173,10 +173,12 @@
     
     
 
-    [self displayUploadStatus];
+    //[self displayUploadStatus];
+    
     [((UIButton *)sender) setEnabled:false];
     [self.spinningView setHidden:false];
-    
+    [self.spinningView setNeedsDisplay];
+   
     FeatureViewController * __block me=self;
     
     void (^progressHandler)(float) = ^(float percentFinished) {
@@ -188,7 +190,7 @@
     void (^completion)(NSDictionary *) = ^(NSDictionary *response) {
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            [me hideUploadStatus];
+            //[me hideUploadStatus];
             [me.progressView setProgress:0.0];
             
             if([[me.navigationController topViewController] isKindOfClass:[FeatureViewController class]]){
@@ -586,13 +588,13 @@
     CGRect aRect = self.view.frame;
     aRect.size.height -= kbSize.height;
     
-    CGPoint offset=[self.view convertPoint:_activeView.frame.origin fromView:_activeView];
-    CGPoint origin=[self.tableView convertPoint:_activeView.frame.origin fromView:_activeView];
+    CGPoint origin=[_tableView convertPoint:_activeView.frame.origin fromView:_activeView.superview];
     
-    if (!CGRectContainsPoint(aRect, origin) ) {
-        CGPoint scrollPoint = CGPointMake(0.0, origin.y-kbSize.height);
+    //if (!CGRectContainsPoint(aRect, origin) ) {
+        
+        CGPoint scrollPoint = CGPointMake(0.0, origin.y);
         [_tableView setContentOffset:scrollPoint animated:YES];
-    }
+    //}
 }
 
 // Called when the UIKeyboardWillHideNotification is sent
