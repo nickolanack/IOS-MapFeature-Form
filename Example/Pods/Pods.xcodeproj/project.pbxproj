@@ -56,6 +56,10 @@
 		902AA32D1D3B5A720092C349 /* OptionsListField.m in Sources */ = {isa = PBXBuildFile; fileRef = 902AA32B1D3B5A720092C349 /* OptionsListField.m */; };
 		905EBC1D1D5D37DA00EC074E /* OptionsListField.h in Headers */ = {isa = PBXBuildFile; fileRef = 905EBC1B1D5D37DA00EC074E /* OptionsListField.h */; };
 		905EBC1E1D5D37DA00EC074E /* OptionsListField.m in Sources */ = {isa = PBXBuildFile; fileRef = 905EBC1C1D5D37DA00EC074E /* OptionsListField.m */; };
+		905EBC211D76029E00EC074E /* KeywordTagsField.h in Headers */ = {isa = PBXBuildFile; fileRef = 905EBC1F1D76029E00EC074E /* KeywordTagsField.h */; };
+		905EBC221D76029E00EC074E /* KeywordTagsField.m in Sources */ = {isa = PBXBuildFile; fileRef = 905EBC201D76029E00EC074E /* KeywordTagsField.m */; };
+		905EBC251D760B1B00EC074E /* TileSelectionCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 905EBC231D760B1B00EC074E /* TileSelectionCollectionViewCell.h */; };
+		905EBC261D760B1B00EC074E /* TileSelectionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 905EBC241D760B1B00EC074E /* TileSelectionCollectionViewCell.m */; };
 		90D120471D3AE1F5006BEC3E /* FeatureField.h in Headers */ = {isa = PBXBuildFile; fileRef = 90D120461D3AE1F5006BEC3E /* FeatureField.h */; };
 		90D1204E1D3EBDFF006BEC3E /* SwitchField.h in Headers */ = {isa = PBXBuildFile; fileRef = 90D1204C1D3EBDFF006BEC3E /* SwitchField.h */; };
 		90D1204F1D3EBDFF006BEC3E /* SwitchField.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D1204D1D3EBDFF006BEC3E /* SwitchField.m */; };
@@ -291,6 +295,10 @@
 		902AA32B1D3B5A720092C349 /* OptionsListField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsListField.m; sourceTree = "<group>"; };
 		905EBC1B1D5D37DA00EC074E /* OptionsListField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsListField.h; sourceTree = "<group>"; };
 		905EBC1C1D5D37DA00EC074E /* OptionsListField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsListField.m; sourceTree = "<group>"; };
+		905EBC1F1D76029E00EC074E /* KeywordTagsField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordTagsField.h; sourceTree = "<group>"; };
+		905EBC201D76029E00EC074E /* KeywordTagsField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordTagsField.m; sourceTree = "<group>"; };
+		905EBC231D760B1B00EC074E /* TileSelectionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileSelectionCollectionViewCell.h; sourceTree = "<group>"; };
+		905EBC241D760B1B00EC074E /* TileSelectionCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileSelectionCollectionViewCell.m; sourceTree = "<group>"; };
 		90D120461D3AE1F5006BEC3E /* FeatureField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureField.h; sourceTree = "<group>"; };
 		90D1204C1D3EBDFF006BEC3E /* SwitchField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchField.h; sourceTree = "<group>"; };
 		90D1204D1D3EBDFF006BEC3E /* SwitchField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchField.m; sourceTree = "<group>"; };
@@ -641,6 +649,10 @@
 				902AA32B1D3B5A720092C349 /* OptionsListField.m */,
 				905EBC1B1D5D37DA00EC074E /* OptionsListField.h */,
 				905EBC1C1D5D37DA00EC074E /* OptionsListField.m */,
+				905EBC1F1D76029E00EC074E /* KeywordTagsField.h */,
+				905EBC201D76029E00EC074E /* KeywordTagsField.m */,
+				905EBC231D760B1B00EC074E /* TileSelectionCollectionViewCell.h */,
+				905EBC241D760B1B00EC074E /* TileSelectionCollectionViewCell.m */,
 				90D120501D3ECC04006BEC3E /* TextField.h */,
 				90D120511D3ECC04006BEC3E /* TextField.m */,
 				90D120581D3ED140006BEC3E /* Subheading.h */,
@@ -838,6 +850,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				905EBC211D76029E00EC074E /* KeywordTagsField.h in Headers */,
 				902AA32C1D3B5A720092C349 /* OptionsListField.h in Headers */,
 				90D120471D3AE1F5006BEC3E /* FeatureField.h in Headers */,
 				0B89471C1C4715126CEE13A49EB70C44 /* HTMLParser-umbrella.h in Headers */,
@@ -845,6 +858,7 @@
 				90D1205A1D3ED140006BEC3E /* Subheading.h in Headers */,
 				905EBC1D1D5D37DA00EC074E /* OptionsListField.h in Headers */,
 				D904C0669B3613B17D35EC6AB6E78D80 /* HTMLParser.h in Headers */,
+				905EBC251D760B1B00EC074E /* TileSelectionCollectionViewCell.h in Headers */,
 				90D120521D3ECC04006BEC3E /* TextField.h in Headers */,
 				90D1204E1D3EBDFF006BEC3E /* SwitchField.h in Headers */,
 			);
@@ -1266,9 +1280,11 @@
 				90D120531D3ECC04006BEC3E /* TextField.m in Sources */,
 				82C31F07CCA3C29BEAAF425C4973092A /* HTMLParser-dummy.m in Sources */,
 				902AA32D1D3B5A720092C349 /* OptionsListField.m in Sources */,
+				905EBC221D76029E00EC074E /* KeywordTagsField.m in Sources */,
 				90D1205B1D3ED140006BEC3E /* Subheading.m in Sources */,
 				901013E81CC6A42700EB5D78 /* MediaItemsTableViewCell.m in Sources */,
 				77EB67A14B0E2D7CD57DE6DFCBC23983 /* HTMLParser.m in Sources */,
+				905EBC261D760B1B00EC074E /* TileSelectionCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
