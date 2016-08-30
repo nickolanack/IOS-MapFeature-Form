@@ -17,6 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B2r-9l-1yC">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="H3h-mz-cmS">
+                                        <rect key="frame" x="282" y="281" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QlS-Cp-LTf">
                                 <rect key="frame" x="0.0" y="541" width="600" height="59"/>
                                 <subviews>
@@ -141,15 +150,45 @@
                                             <outlet property="switchField" destination="5Q5-Dc-Ovr" id="96F-Vz-4eO"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OptionsField" rowHeight="42" id="goC-Db-FXN" userLabel="Options" customClass="OptionsField">
+                                        <rect key="frame" x="0.0" y="289" width="600" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="goC-Db-FXN" id="HTX-Hi-Kbf">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="41"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="479-GQ-YMs">
+                                                    <rect key="frame" x="359" y="7" width="211" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="211" id="MZj-jb-NPc"/>
+                                                    </constraints>
+                                                    <segments>
+                                                        <segment title="First"/>
+                                                        <segment title="Second"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="onChange:" destination="goC-Db-FXN" eventType="valueChanged" id="Jga-Vg-r85"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="479-GQ-YMs" secondAttribute="trailing" constant="22" id="BUy-0N-h99"/>
+                                                <constraint firstItem="479-GQ-YMs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HTX-Hi-Kbf" secondAttribute="leadingMargin" constant="22" id="nIZ-oG-orW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="optionField" destination="479-GQ-YMs" id="taL-xn-Nt9"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OptionsListField" rowHeight="113" id="YtD-1l-Fmq" userLabel="OptionsListField" customClass="OptionsListField">
-                                        <rect key="frame" x="0.0" y="289" width="600" height="113"/>
+                                        <rect key="frame" x="0.0" y="331" width="600" height="113"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YtD-1l-Fmq" id="fyS-l4-uJS">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="112"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7zR-ux-Y5s">
-                                                    <rect key="frame" x="21" y="0.0" width="560" height="111"/>
+                                                <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7zR-ux-Y5s">
+                                                    <rect key="frame" x="20" y="1" width="560" height="111"/>
                                                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <outlet property="dataSource" destination="YtD-1l-Fmq" id="bFO-VI-jTz"/>
@@ -169,7 +208,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SubHeading" rowHeight="35" id="R2n-kj-qpO" customClass="Subheading">
-                                        <rect key="frame" x="0.0" y="402" width="600" height="35"/>
+                                        <rect key="frame" x="0.0" y="444" width="600" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R2n-kj-qpO" id="Kxu-Jy-Zpa">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="34"/>
@@ -192,7 +231,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TextField" rowHeight="120" id="1Sl-cU-8Xz" customClass="TextField">
-                                        <rect key="frame" x="0.0" y="437" width="600" height="120"/>
+                                        <rect key="frame" x="0.0" y="479" width="600" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Sl-cU-8Xz" id="lF1-Yg-hPX">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
@@ -224,7 +263,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MediaField" id="8l8-sg-DQN" customClass="MediaItemsTableViewCell">
-                                        <rect key="frame" x="0.0" y="557" width="600" height="70"/>
+                                        <rect key="frame" x="0.0" y="599" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8l8-sg-DQN" id="gmA-9y-qIo">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
@@ -257,15 +296,6 @@
                                     <outlet property="delegate" destination="Yud-dK-GwM" id="iqR-lM-KII"/>
                                 </connections>
                             </tableView>
-                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B2r-9l-1yC">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="H3h-mz-cmS">
-                                        <rect key="frame" x="282" y="281" width="37" height="37"/>
-                                    </activityIndicatorView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>

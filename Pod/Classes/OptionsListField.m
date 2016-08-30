@@ -47,7 +47,17 @@
     NSDictionary *details=self.delegate.details;
     
     if(details!=nil){
-        value=[details objectForKey:fieldName];
+        NSString *strValue=[details objectForKey:fieldName];
+        if(strValue){
+            int index=[_values indexOfObject:strValue];
+            if(index!=NSNotFound){
+                value=[NSNumber numberWithInteger:index];
+            }
+        }
+    }
+    
+    if(value==nil){
+        value=[fieldParameters objectForKey:@"value"];
     }
     
     if(value){

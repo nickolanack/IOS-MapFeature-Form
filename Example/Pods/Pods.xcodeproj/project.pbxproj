@@ -54,6 +54,8 @@
 		901013E81CC6A42700EB5D78 /* MediaItemsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 901013E61CC6A42700EB5D78 /* MediaItemsTableViewCell.m */; };
 		902AA32C1D3B5A720092C349 /* OptionsListField.h in Headers */ = {isa = PBXBuildFile; fileRef = 902AA32A1D3B5A720092C349 /* OptionsListField.h */; };
 		902AA32D1D3B5A720092C349 /* OptionsListField.m in Sources */ = {isa = PBXBuildFile; fileRef = 902AA32B1D3B5A720092C349 /* OptionsListField.m */; };
+		905EBC1D1D5D37DA00EC074E /* OptionsListField.h in Headers */ = {isa = PBXBuildFile; fileRef = 905EBC1B1D5D37DA00EC074E /* OptionsListField.h */; };
+		905EBC1E1D5D37DA00EC074E /* OptionsListField.m in Sources */ = {isa = PBXBuildFile; fileRef = 905EBC1C1D5D37DA00EC074E /* OptionsListField.m */; };
 		90D120471D3AE1F5006BEC3E /* FeatureField.h in Headers */ = {isa = PBXBuildFile; fileRef = 90D120461D3AE1F5006BEC3E /* FeatureField.h */; };
 		90D1204E1D3EBDFF006BEC3E /* SwitchField.h in Headers */ = {isa = PBXBuildFile; fileRef = 90D1204C1D3EBDFF006BEC3E /* SwitchField.h */; };
 		90D1204F1D3EBDFF006BEC3E /* SwitchField.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D1204D1D3EBDFF006BEC3E /* SwitchField.m */; };
@@ -287,6 +289,8 @@
 		901013E61CC6A42700EB5D78 /* MediaItemsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaItemsTableViewCell.m; sourceTree = "<group>"; };
 		902AA32A1D3B5A720092C349 /* OptionsListField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsListField.h; sourceTree = "<group>"; };
 		902AA32B1D3B5A720092C349 /* OptionsListField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsListField.m; sourceTree = "<group>"; };
+		905EBC1B1D5D37DA00EC074E /* OptionsListField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsListField.h; sourceTree = "<group>"; };
+		905EBC1C1D5D37DA00EC074E /* OptionsListField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsListField.m; sourceTree = "<group>"; };
 		90D120461D3AE1F5006BEC3E /* FeatureField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureField.h; sourceTree = "<group>"; };
 		90D1204C1D3EBDFF006BEC3E /* SwitchField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchField.h; sourceTree = "<group>"; };
 		90D1204D1D3EBDFF006BEC3E /* SwitchField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchField.m; sourceTree = "<group>"; };
@@ -635,6 +639,8 @@
 				90D120461D3AE1F5006BEC3E /* FeatureField.h */,
 				902AA32A1D3B5A720092C349 /* OptionsListField.h */,
 				902AA32B1D3B5A720092C349 /* OptionsListField.m */,
+				905EBC1B1D5D37DA00EC074E /* OptionsListField.h */,
+				905EBC1C1D5D37DA00EC074E /* OptionsListField.m */,
 				90D120501D3ECC04006BEC3E /* TextField.h */,
 				90D120511D3ECC04006BEC3E /* TextField.m */,
 				90D120581D3ED140006BEC3E /* Subheading.h */,
@@ -837,6 +843,7 @@
 				0B89471C1C4715126CEE13A49EB70C44 /* HTMLParser-umbrella.h in Headers */,
 				901013E71CC6A42700EB5D78 /* MediaItemsTableViewCell.h in Headers */,
 				90D1205A1D3ED140006BEC3E /* Subheading.h in Headers */,
+				905EBC1D1D5D37DA00EC074E /* OptionsListField.h in Headers */,
 				D904C0669B3613B17D35EC6AB6E78D80 /* HTMLParser.h in Headers */,
 				90D120521D3ECC04006BEC3E /* TextField.h in Headers */,
 				90D1204E1D3EBDFF006BEC3E /* SwitchField.h in Headers */,
@@ -1255,6 +1262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90D1204F1D3EBDFF006BEC3E /* SwitchField.m in Sources */,
+				905EBC1E1D5D37DA00EC074E /* OptionsListField.m in Sources */,
 				90D120531D3ECC04006BEC3E /* TextField.m in Sources */,
 				82C31F07CCA3C29BEAAF425C4973092A /* HTMLParser-dummy.m in Sources */,
 				902AA32D1D3B5A720092C349 /* OptionsListField.m in Sources */,

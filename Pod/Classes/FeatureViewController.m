@@ -22,10 +22,12 @@
 @property UIImagePickerController *picker;
 @property CLLocationManager *locMan;
 @property CLLocation *location;
+@property CLLocation *locationLast; //in case of cancel.
 
 @property NSDictionary *formParameters;
 
 @property UIView *activeView;
+@property bool useCurrentLocation;
 
 @end
 
@@ -46,6 +48,7 @@
     
     if([formData objectForKey:@"location"]){
         _location=[formData objectForKey:@"location"];
+        _useCurrentLocation=false;
     }
 
 }
@@ -96,9 +99,9 @@
     
     
    
-    
+   
     if(!_location){
-        
+        _useCurrentLocation=true;
         _locMan =[[CLLocationManager alloc] init];
         
         if([CLLocationManager locationServicesEnabled] &&
@@ -110,6 +113,7 @@
             }
             
             [_locMan startUpdatingLocation];
+            [_locMan setDelegate:self];
             _location= [_locMan location];
             
             
@@ -131,6 +135,17 @@
     
     [self registerForKeyboardNotifications];
     
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    
+    for (CLLocation *location in locations) {
+        if((!_location)||location.horizontalAccuracy<_location.horizontalAccuracy){
+            _location=location;
+        }
+    }
+
 }
 
 -(bool)allowLibraryPicker{
@@ -530,6 +545,12 @@
     
     }
     
+    if(_useCurrentLocation){
+        _locationLast=_location;
+        _location=nil;
+        [_locMan startUpdatingLocation];
+    }
+    
     [self presentViewController:_picker animated:false completion:^{
         
     }];
@@ -542,8 +563,12 @@
         [self.tableView reloadData];
     }];
     
-    picker.delegate=nil;
-    picker=nil;
+    if(_useCurrentLocation){
+        [_locMan stopUpdatingLocation];
+    }
+    
+    _picker.delegate=nil;
+    _picker=nil;
     
 }
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
@@ -552,8 +577,15 @@
         [self.navigationController popViewControllerAnimated:true];
     }
     
-    picker.delegate=nil;
-    picker=nil;
+    if(_useCurrentLocation){
+        if(_locationLast){
+            _location=_locationLast;
+        }
+        [_locMan stopUpdatingLocation];
+    }
+    
+    _picker.delegate=nil;
+    _picker=nil;
     
 }
 

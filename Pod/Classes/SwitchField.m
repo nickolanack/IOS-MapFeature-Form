@@ -43,7 +43,7 @@
     }
     
     if(value){
-        [self.switchField setSelected:[value boolValue]];
+        [self.switchField setOn:[value boolValue]];
         [self.delegate.details setObject:value forKey:fieldName];
     }
     

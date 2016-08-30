@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MenuViewController.h"
 
-@interface FeatureViewController : UIViewController<UIImagePickerControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface FeatureViewController : UIViewController<UIImagePickerControllerDelegate, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate>
 
 @property MenuViewController *delegate;
 
