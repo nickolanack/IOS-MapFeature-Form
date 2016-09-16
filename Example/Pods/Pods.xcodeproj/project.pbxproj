@@ -33,13 +33,11 @@
 		57D53AD33166DE528803C3F23691E31D /* AttributeMultiTextFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C1A153F4CAF378E58BE9D6FC685C106 /* AttributeMultiTextFieldCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D275D2581FCB774B8F2B38B7FFAF75F /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = CC162F6A64B430CC9871E8593D5AE27B /* sqlite3.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5DF2FD5A016FB7082CC5EBE52CFD61C4 /* IOSQlite-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA3D3346EC51DB1B2B862A590BEEFAF /* IOSQlite-dummy.m */; };
-		69E33A3D16F87D7B88FC71AB171A6E6C /* MenuViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 302C3F5387CED171AD06D0509A93477B /* MenuViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6AEE8B72AC82442061F8AD1F4AA92BD0 /* HTMLParser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2BEF887455ECD1EA2C04343CFE3002A5 /* HTMLParser.bundle */; };
 		6B6C70BDF7E6403C7B5A14D9DFC9A0AA /* ResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = DD58552EDA45BB8C5A076A904C6308B8 /* ResultSet.m */; };
 		6C557A6450C58CF5D8206EA8B3746522 /* xsm_edit.png in Resources */ = {isa = PBXBuildFile; fileRef = D4355D215D90F65EBEF6CD5B5C167AFF /* xsm_edit.png */; };
 		6CCA8A22D321C6CDB1D9245509C6AFC8 /* FeatureCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B15F3EA900115BD32CB5C6F203AB403 /* FeatureCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6DE3579882BBA442795A768F03E21B43 /* ImageUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F2D6B8673D83CB488B034913EA7CB7 /* ImageUtilities.m */; };
-		7190D56990A788014F63F9F424536CB8 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB73B84ECFD7A79357B0733F3E55664E /* MenuViewController.m */; };
 		73665DA3DA89DDE386AB354FE2650700 /* feature-gray-40x63.png in Resources */ = {isa = PBXBuildFile; fileRef = 9991EFF13892E66ABC678894235A03F4 /* feature-gray-40x63.png */; };
 		77EB67A14B0E2D7CD57DE6DFCBC23983 /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DCA8B1FCE36853BB6DBEF0DA7F0B02 /* HTMLParser.m */; };
 		78999D0AF5A6B699A1954DB13099C836 /* sqlite3-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A25F53E2BD50006688B1CD0107BAB /* sqlite3-dummy.m */; };
@@ -52,14 +50,20 @@
 		8C272C9ACBF0986AFCBBADA87405443B /* sqlite3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27754310261D43B109D3AC34F3B58A21 /* sqlite3.framework */; };
 		901013E71CC6A42700EB5D78 /* MediaItemsTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 901013E51CC6A42700EB5D78 /* MediaItemsTableViewCell.h */; };
 		901013E81CC6A42700EB5D78 /* MediaItemsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 901013E61CC6A42700EB5D78 /* MediaItemsTableViewCell.m */; };
+		9016A17D1D807C5C00349BF7 /* UsersItemListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9016A17B1D807C5C00349BF7 /* UsersItemListViewController.h */; };
+		9016A17E1D807C5C00349BF7 /* UsersItemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9016A17C1D807C5C00349BF7 /* UsersItemListViewController.m */; };
 		902AA32C1D3B5A720092C349 /* OptionsListField.h in Headers */ = {isa = PBXBuildFile; fileRef = 902AA32A1D3B5A720092C349 /* OptionsListField.h */; };
 		902AA32D1D3B5A720092C349 /* OptionsListField.m in Sources */ = {isa = PBXBuildFile; fileRef = 902AA32B1D3B5A720092C349 /* OptionsListField.m */; };
+		905B4E551D8C7B39004E6777 /* ContactInfoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 905B4E531D8C7B39004E6777 /* ContactInfoViewController.h */; };
+		905B4E561D8C7B39004E6777 /* ContactInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 905B4E541D8C7B39004E6777 /* ContactInfoViewController.m */; };
 		905EBC1D1D5D37DA00EC074E /* OptionsListField.h in Headers */ = {isa = PBXBuildFile; fileRef = 905EBC1B1D5D37DA00EC074E /* OptionsListField.h */; };
 		905EBC1E1D5D37DA00EC074E /* OptionsListField.m in Sources */ = {isa = PBXBuildFile; fileRef = 905EBC1C1D5D37DA00EC074E /* OptionsListField.m */; };
 		905EBC211D76029E00EC074E /* KeywordTagsField.h in Headers */ = {isa = PBXBuildFile; fileRef = 905EBC1F1D76029E00EC074E /* KeywordTagsField.h */; };
 		905EBC221D76029E00EC074E /* KeywordTagsField.m in Sources */ = {isa = PBXBuildFile; fileRef = 905EBC201D76029E00EC074E /* KeywordTagsField.m */; };
 		905EBC251D760B1B00EC074E /* TileSelectionCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 905EBC231D760B1B00EC074E /* TileSelectionCollectionViewCell.h */; };
 		905EBC261D760B1B00EC074E /* TileSelectionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 905EBC241D760B1B00EC074E /* TileSelectionCollectionViewCell.m */; };
+		906AA1961D87527800E299C4 /* ContactInfoField.h in Headers */ = {isa = PBXBuildFile; fileRef = 906AA1941D87527800E299C4 /* ContactInfoField.h */; };
+		906AA1971D87527800E299C4 /* ContactInfoField.m in Sources */ = {isa = PBXBuildFile; fileRef = 906AA1951D87527800E299C4 /* ContactInfoField.m */; };
 		90D120471D3AE1F5006BEC3E /* FeatureField.h in Headers */ = {isa = PBXBuildFile; fileRef = 90D120461D3AE1F5006BEC3E /* FeatureField.h */; };
 		90D1204E1D3EBDFF006BEC3E /* SwitchField.h in Headers */ = {isa = PBXBuildFile; fileRef = 90D1204C1D3EBDFF006BEC3E /* SwitchField.h */; };
 		90D1204F1D3EBDFF006BEC3E /* SwitchField.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D1204D1D3EBDFF006BEC3E /* SwitchField.m */; };
@@ -254,7 +258,6 @@
 		295BB06C82C778DBE252FF88F5DC2987 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B43D523AB64AE6A3A640FE3B047BB52 /* StyledCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = StyledCollectionView.m; sourceTree = "<group>"; };
 		2BEF887455ECD1EA2C04343CFE3002A5 /* HTMLParser.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTMLParser.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		302C3F5387CED171AD06D0509A93477B /* MenuViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		310483BACA52DCC9CA991E9250C1B6E9 /* UserLibrary.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = UserLibrary.storyboard; sourceTree = "<group>"; };
 		33B8FCDEF7AC4BCBC9B61EE30D6327E8 /* StyleProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = StyleProvider.h; sourceTree = "<group>"; };
 		35155FD522060DB9CC17AB7DBAA8DD5A /* HTMLParser-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HTMLParser-prefix.pch"; sourceTree = "<group>"; };
@@ -291,14 +294,20 @@
 		86643A2ECCA5C70771CEA99222331EF3 /* IOSQlite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IOSQlite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		901013E51CC6A42700EB5D78 /* MediaItemsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaItemsTableViewCell.h; sourceTree = "<group>"; };
 		901013E61CC6A42700EB5D78 /* MediaItemsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaItemsTableViewCell.m; sourceTree = "<group>"; };
+		9016A17B1D807C5C00349BF7 /* UsersItemListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersItemListViewController.h; sourceTree = "<group>"; };
+		9016A17C1D807C5C00349BF7 /* UsersItemListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersItemListViewController.m; sourceTree = "<group>"; };
 		902AA32A1D3B5A720092C349 /* OptionsListField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsListField.h; sourceTree = "<group>"; };
 		902AA32B1D3B5A720092C349 /* OptionsListField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsListField.m; sourceTree = "<group>"; };
+		905B4E531D8C7B39004E6777 /* ContactInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactInfoViewController.h; sourceTree = "<group>"; };
+		905B4E541D8C7B39004E6777 /* ContactInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactInfoViewController.m; sourceTree = "<group>"; };
 		905EBC1B1D5D37DA00EC074E /* OptionsListField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsListField.h; sourceTree = "<group>"; };
 		905EBC1C1D5D37DA00EC074E /* OptionsListField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsListField.m; sourceTree = "<group>"; };
 		905EBC1F1D76029E00EC074E /* KeywordTagsField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordTagsField.h; sourceTree = "<group>"; };
 		905EBC201D76029E00EC074E /* KeywordTagsField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordTagsField.m; sourceTree = "<group>"; };
 		905EBC231D760B1B00EC074E /* TileSelectionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileSelectionCollectionViewCell.h; sourceTree = "<group>"; };
 		905EBC241D760B1B00EC074E /* TileSelectionCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileSelectionCollectionViewCell.m; sourceTree = "<group>"; };
+		906AA1941D87527800E299C4 /* ContactInfoField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactInfoField.h; sourceTree = "<group>"; };
+		906AA1951D87527800E299C4 /* ContactInfoField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactInfoField.m; sourceTree = "<group>"; };
 		90D120461D3AE1F5006BEC3E /* FeatureField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureField.h; sourceTree = "<group>"; };
 		90D1204C1D3EBDFF006BEC3E /* SwitchField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchField.h; sourceTree = "<group>"; };
 		90D1204D1D3EBDFF006BEC3E /* SwitchField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchField.m; sourceTree = "<group>"; };
@@ -350,7 +359,6 @@
 		E621B85BA5E162F9FB527DD20077F534 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		E7DCA8B1FCE36853BB6DBEF0DA7F0B02 /* HTMLParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HTMLParser.m; path = Pod/Classes/HTMLParser.m; sourceTree = "<group>"; };
 		E9EE93A77A37CA916D0884442BF0F69A /* ImageUtilities.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageUtilities.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB73B84ECFD7A79357B0733F3E55664E /* MenuViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		F22201DFCFDC0814703BD43548427FEE /* HTMLParser.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HTMLParser.xcconfig; sourceTree = "<group>"; };
 		F3BFA18E7FDCC550032F59B48382C71A /* sqlite3ext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sqlite3ext.h; path = "sqlite-amalgamation-3120000/sqlite3ext.h"; sourceTree = "<group>"; };
 		F7D0E7E772B8D1655CE2DD0E50F37C90 /* IOS-MapFeature-Form-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IOS-MapFeature-Form-prefix.pch"; sourceTree = "<group>"; };
@@ -637,8 +645,8 @@
 				C0FE38A64114C6A8A69E58B2D93AA399 /* GFTitleCell.h */,
 				DC2EAB359DDD2D848699AC901ACAA319 /* GFTitleCell.m */,
 				19034803EB32F05C130689604D7234FB /* MapFormDelegate.h */,
-				302C3F5387CED171AD06D0509A93477B /* MenuViewController.h */,
-				EB73B84ECFD7A79357B0733F3E55664E /* MenuViewController.m */,
+				9016A17B1D807C5C00349BF7 /* UsersItemListViewController.h */,
+				9016A17C1D807C5C00349BF7 /* UsersItemListViewController.m */,
 				B38FD876632B60B8FCAC325C73CC1935 /* StyledCollectionView.h */,
 				2B43D523AB64AE6A3A640FE3B047BB52 /* StyledCollectionView.m */,
 				901013E51CC6A42700EB5D78 /* MediaItemsTableViewCell.h */,
@@ -649,6 +657,10 @@
 				902AA32B1D3B5A720092C349 /* OptionsListField.m */,
 				905EBC1B1D5D37DA00EC074E /* OptionsListField.h */,
 				905EBC1C1D5D37DA00EC074E /* OptionsListField.m */,
+				906AA1941D87527800E299C4 /* ContactInfoField.h */,
+				906AA1951D87527800E299C4 /* ContactInfoField.m */,
+				905B4E531D8C7B39004E6777 /* ContactInfoViewController.h */,
+				905B4E541D8C7B39004E6777 /* ContactInfoViewController.m */,
 				905EBC1F1D76029E00EC074E /* KeywordTagsField.h */,
 				905EBC201D76029E00EC074E /* KeywordTagsField.m */,
 				905EBC231D760B1B00EC074E /* TileSelectionCollectionViewCell.h */,
@@ -814,7 +826,6 @@
 				34B4D5D2102BB60FABBF4D462A3755F1 /* GFTitleCell.h in Headers */,
 				3AE59907952C927B00C5C06949200D8A /* IOS-MapFeature-Form-umbrella.h in Headers */,
 				56C00DD61EA410D553E33CA88D3C1E03 /* MapFormDelegate.h in Headers */,
-				69E33A3D16F87D7B88FC71AB171A6E6C /* MenuViewController.h in Headers */,
 				08593AE97CB501E031A9FEE505B900A0 /* StyledCollectionView.h in Headers */,
 				A1729C4B7AA2255CFCADF189AB2B2158 /* StyleProvider.h in Headers */,
 			);
@@ -853,10 +864,13 @@
 				905EBC211D76029E00EC074E /* KeywordTagsField.h in Headers */,
 				902AA32C1D3B5A720092C349 /* OptionsListField.h in Headers */,
 				90D120471D3AE1F5006BEC3E /* FeatureField.h in Headers */,
+				906AA1961D87527800E299C4 /* ContactInfoField.h in Headers */,
+				905B4E551D8C7B39004E6777 /* ContactInfoViewController.h in Headers */,
 				0B89471C1C4715126CEE13A49EB70C44 /* HTMLParser-umbrella.h in Headers */,
 				901013E71CC6A42700EB5D78 /* MediaItemsTableViewCell.h in Headers */,
 				90D1205A1D3ED140006BEC3E /* Subheading.h in Headers */,
 				905EBC1D1D5D37DA00EC074E /* OptionsListField.h in Headers */,
+				9016A17D1D807C5C00349BF7 /* UsersItemListViewController.h in Headers */,
 				D904C0669B3613B17D35EC6AB6E78D80 /* HTMLParser.h in Headers */,
 				905EBC251D760B1B00EC074E /* TileSelectionCollectionViewCell.h in Headers */,
 				90D120521D3ECC04006BEC3E /* TextField.h in Headers */,
@@ -1266,7 +1280,6 @@
 				ECD7365E3B3E707A12014E9BDCC6EA2B /* GFKeywordCell.m in Sources */,
 				2E1F0E5CE2BA5389EBE90B65C42F46B5 /* GFTitleCell.m in Sources */,
 				A781B6742684888110E08C6EF73BA965 /* IOS-MapFeature-Form-dummy.m in Sources */,
-				7190D56990A788014F63F9F424536CB8 /* MenuViewController.m in Sources */,
 				3AD0CD07BDA54A62727FA1257603C394 /* StyledCollectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1276,14 +1289,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				90D1204F1D3EBDFF006BEC3E /* SwitchField.m in Sources */,
+				906AA1971D87527800E299C4 /* ContactInfoField.m in Sources */,
 				905EBC1E1D5D37DA00EC074E /* OptionsListField.m in Sources */,
 				90D120531D3ECC04006BEC3E /* TextField.m in Sources */,
 				82C31F07CCA3C29BEAAF425C4973092A /* HTMLParser-dummy.m in Sources */,
 				902AA32D1D3B5A720092C349 /* OptionsListField.m in Sources */,
 				905EBC221D76029E00EC074E /* KeywordTagsField.m in Sources */,
+				905B4E561D8C7B39004E6777 /* ContactInfoViewController.m in Sources */,
 				90D1205B1D3ED140006BEC3E /* Subheading.m in Sources */,
 				901013E81CC6A42700EB5D78 /* MediaItemsTableViewCell.m in Sources */,
 				77EB67A14B0E2D7CD57DE6DFCBC23983 /* HTMLParser.m in Sources */,
+				9016A17E1D807C5C00349BF7 /* UsersItemListViewController.m in Sources */,
 				905EBC261D760B1B00EC074E /* TileSelectionCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -32,9 +32,6 @@
     }
         
     
-    
-    
-    
     if([_delegate respondsToSelector:@selector(itemShouldBeDeletable:)]){
         if(!([_delegate itemShouldBeDeletable:metadata])){
             [self.deleteButton setAlpha:0.2];
@@ -57,6 +54,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
 
 
 /*

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Nick Blackwell. All rights reserved.
 //
 
-#import "MenuViewController.h"
+#import "UsersItemListViewController.h"
 #import "FeatureViewController.h"
 #import "FeatureDetailViewController.h"
 
@@ -19,7 +19,7 @@
 
 
 
-@interface MenuViewController ()
+@interface UsersItemListViewController ()
 
 
 
@@ -39,7 +39,7 @@
 
 @end
 
-@implementation MenuViewController
+@implementation UsersItemListViewController
 
 
 
@@ -329,12 +329,12 @@
 
 - (IBAction)onMapButtonTap:(id)sender {
     
-    [_delegate menuForm:(MenuViewController *) self BottomBarButtonWasTappedAtIndex:0];
+    [_delegate menuForm:(UsersItemListViewController *) self BottomBarButtonWasTappedAtIndex:0];
     
 }
 - (IBAction)onHelpTap:(id)sender {
     
-    [_delegate menuFormHelpButtonWasTapped:(MenuViewController *) self];
+    [_delegate menuFormHelpButtonWasTapped:(UsersItemListViewController *) self];
     
 }
 @end

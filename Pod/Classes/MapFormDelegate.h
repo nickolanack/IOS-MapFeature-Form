@@ -6,7 +6,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FeatureCell.h"
-#import "MenuViewController.h"
+#import "UsersItemListViewController.h"
 //#import <UIKit/UIKit.h>
 
 
@@ -29,22 +29,22 @@
 -(void)formatMenuItemsCell:(FeatureCell *)cell withData:(NSDictionary *)data;
 
 -(int)menuFormNumberOfButtons;
--(void)menuForm:(MenuViewController *) view BottomBarButtonWasTappedAtIndex:(int)index;
+-(void)menuForm:(UsersItemListViewController *) view BottomBarButtonWasTappedAtIndex:(int)index;
 
 
 
 
 
 
--(void)menuFormHelpButtonWasTapped:(MenuViewController *) view;
+-(void)menuFormHelpButtonWasTapped:(UsersItemListViewController *) view;
 
 @optional
 
--(void)menuForm:(MenuViewController *) view TopBarButtonWasTappedAtIndex:(int)index;
+-(void)menuForm:(UsersItemListViewController *) view TopBarButtonWasTappedAtIndex:(int)index;
 
--(bool)menuForm:(MenuViewController *) view NamedButtonWasTapped:(NSString *)string;
+-(bool)menuForm:(UsersItemListViewController *) view NamedButtonWasTapped:(NSString *)string;
 
--(bool)menuForm:(MenuViewController *) view ItemWasTapped:(NSDictionary *)item;
+-(bool)menuForm:(UsersItemListViewController *) view ItemWasTapped:(NSDictionary *)item;
 
 
 -(NSDictionary *)menuFormParamtersForForm;
@@ -57,11 +57,8 @@
 
 
 -(UIImage *)imageForItem:(NSDictionary *) item;
-
-
 -(NSDictionary *)menuFormFieldMetadata;
 
-
-
+-(bool)menuFormWasDeniedAccessToLocation:(UsersItemListViewController *) view;
 
 @end

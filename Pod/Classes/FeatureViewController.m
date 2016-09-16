@@ -55,7 +55,7 @@
 
 - (IBAction)onTakePhotoCellButtonTap:(id)sender {
     
-    [self takePhoto];
+    [self displayImagePicker];
     
 }
 
@@ -68,6 +68,8 @@
     
 
 }
+
+
 
 -(void)viewWillAppear:(BOOL)animated{
     
@@ -100,40 +102,44 @@
     
    
    
-    if(!_location){
-        _useCurrentLocation=true;
-        _locMan =[[CLLocationManager alloc] init];
-        
-        if([CLLocationManager locationServicesEnabled] &&
-           [CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied)
-        {
-            
-            if([ CLLocationManager authorizationStatus]==kCLAuthorizationStatusNotDetermined){
-                [_locMan requestWhenInUseAuthorization];
-            }
-            
-            [_locMan startUpdatingLocation];
-            [_locMan setDelegate:self];
-            _location= [_locMan location];
-            
-            
-        }else{
-            
-            NSLog(@"Denied Access to user location");
-        }
-    }else{
-        NSLog(@"Using supplied location");
-    }
+    
     
     self.attributes=[[NSMutableDictionary alloc] initWithDictionary:@{@"keywords":@[]}];
     self.details=[[NSMutableDictionary alloc] initWithDictionary:@{@"name":@""}];
     
-    if((!self.media)&&[self startWithImagePicker]){
-        [self takePhoto];
-    }
-    
+    [self checkInitialPickerDisplay];
     
     [self registerForKeyboardNotifications];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    
+    [self.tableView setDelegate:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+}
+
+-(void)checkInitialPickerDisplay{
+    
+    if(!_location){
+        _useCurrentLocation=true;
+    }else{
+        NSLog(@"Using supplied location");
+    }
+    
+    if((!self.media)&&[self startWithImagePicker]){
+        [self displayImagePicker];
+    }
+}
+
+
+- (void)appWillEnterForeground:(NSNotification *)notification {
+    NSLog(@"will enter foreground notification");
+    
+    [self checkInitialPickerDisplay];
     
 }
 
@@ -184,34 +190,41 @@
 
 #pragma Mark Buttons
 
+
 - (IBAction)onSaveFormButtonTap:(id)sender {
+    
+    self.spinningView.barStyle = UIBarStyleDefault;
+    //self.spinningView.tintColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
+    
+    [((UIButton *)sender) setEnabled:false];
+    [self.spinningView setHidden:false];
+    [self.spinningView setNeedsDisplay];
+    
+
+    [self performSelector:@selector(saveForm:) withObject:nil afterDelay:0.2];
+}
+
+- (void)saveForm:(id)sender {
     
     
 
     //[self displayUploadStatus];
     
-    [((UIButton *)sender) setEnabled:false];
-    [self.spinningView setHidden:false];
-    [self.spinningView setNeedsDisplay];
+    
    
     FeatureViewController * __block me=self;
     
     void (^progressHandler)(float) = ^(float percentFinished) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [me.progressView setProgress:percentFinished];
-        });
+    
         
     };
     void (^completion)(NSDictionary *) = ^(NSDictionary *response) {
-        dispatch_async(dispatch_get_main_queue(), ^{
+        
             
-            //[me hideUploadStatus];
-            [me.progressView setProgress:0.0];
-            
-            if([[me.navigationController topViewController] isKindOfClass:[FeatureViewController class]]){
-                [me.navigationController popViewControllerAnimated:true];
-            }
-        });
+        if([[me.navigationController topViewController] isKindOfClass:[FeatureViewController class]]){
+            [me.navigationController popViewControllerAnimated:true];
+        }
+      
     };
     
     
@@ -294,11 +307,7 @@
 }
 
 
--(void)viewWillDisappear:(BOOL)animated{
-    
-    [self.tableView setDelegate:nil];
-    
-}
+
 
 
 #pragma mark UITableViewDataSource
@@ -520,7 +529,7 @@
 
 
 
--(void)takePhoto{
+-(void)displayImagePicker{
     
     if(!_picker){
    
@@ -546,16 +555,67 @@
     
     }
     
-    if(_useCurrentLocation){
-        _locationLast=_location;
-        _location=nil;
-        [_locMan startUpdatingLocation];
+    if(!_useCurrentLocation||[self startUpdatingUsersCurrentLocation]){
+        
+        
+        //Todo check is already visible
+        
+        [self presentViewController:_picker animated:false completion:^{
+            
+        }];
+  
     }
     
-    [self presentViewController:_picker animated:false completion:^{
-        
-    }];
+    
 }
+
+
+-(bool)startUpdatingUsersCurrentLocation{
+    
+    if(!_locMan){
+        _locMan =[[CLLocationManager alloc] init];
+    }
+    
+    CLAuthorizationStatus status=[CLLocationManager authorizationStatus];
+    
+    if([CLLocationManager locationServicesEnabled] &&
+       status != kCLAuthorizationStatusDenied)
+    {
+        
+        if(status==kCLAuthorizationStatusNotDetermined){
+            [_locMan requestWhenInUseAuthorization];
+        }
+        
+        
+        _locationLast=_location;
+        _location=nil;
+        [_locMan setDelegate:self];
+        [_locMan startUpdatingLocation];
+        [_locMan requestLocation];
+        
+        
+        return true;
+        
+        
+    }else{
+        
+        if([_formDelegate respondsToSelector:@selector(menuFormWasDeniedAccessToLocation:)]){
+           return [_formDelegate menuFormWasDeniedAccessToLocation:self];
+        }else{
+            @throw [[NSException alloc] initWithName:@"Denied access to users current location" reason:@"Cannot continue without access to the allowing access to location" userInfo:nil];
+        }
+    }
+    
+    return false;
+    
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+       didFailWithError:(NSError *)error{
+    NSLog(@"%@", error);
+}
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     NSMutableDictionary *dict=[NSMutableDictionary dictionaryWithDictionary:info];
     self.media=dict;
@@ -565,7 +625,12 @@
     }];
     
     if(_useCurrentLocation){
+        
         [_locMan stopUpdatingLocation];
+        
+        if(!_location){
+            @throw [[NSException alloc] initWithName:@"Invalid location" reason:@"Was unable to get the users current location" userInfo:nil];
+        }
     }
     
     _picker.delegate=nil;

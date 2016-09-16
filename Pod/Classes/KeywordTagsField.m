@@ -60,7 +60,7 @@
         NSString *strValue=[details objectForKey:fieldName];
         if(strValue){
             int index=[_values indexOfObject:strValue];
-            if(index!=NSNotFound){
+            if(index!=NSNotFound&&index>=0){
                 value=[NSNumber numberWithInteger:index];
             }
         }
@@ -105,6 +105,8 @@
         
         [cell.button setSelected:true];
         [cell setSelected:true];
+        
+        [collectionView selectItemAtIndexPath:indexPath animated:true scrollPosition:UICollectionViewScrollPositionNone];
         
     }else{
         [cell.button setSelected:false];

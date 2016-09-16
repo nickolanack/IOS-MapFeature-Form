@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MenuViewController.h"
+#import "UsersItemListViewController.h"
 
 @interface FeatureViewController : UIViewController<UIImagePickerControllerDelegate, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate>
 
-@property MenuViewController *delegate;
+@property UsersItemListViewController *delegate;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -33,6 +33,6 @@
 
 
 -(void) setActiveView:(UIView *)view;
-@property (unsafe_unretained, nonatomic) IBOutlet UIView *spinningView;
+@property (unsafe_unretained, nonatomic) IBOutlet UIToolbar *spinningView;
 
 @end
