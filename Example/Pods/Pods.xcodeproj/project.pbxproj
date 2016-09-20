@@ -73,6 +73,17 @@
 		90D120531D3ECC04006BEC3E /* TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D120511D3ECC04006BEC3E /* TextField.m */; };
 		90D1205A1D3ED140006BEC3E /* Subheading.h in Headers */ = {isa = PBXBuildFile; fileRef = 90D120581D3ED140006BEC3E /* Subheading.h */; };
 		90D1205B1D3ED140006BEC3E /* Subheading.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D120591D3ED140006BEC3E /* Subheading.m */; };
+		90E5CA3F1D91120400F5E8D2 /* Space.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E5CA3E1D91120400F5E8D2 /* Space.xib */; };
+		90E5CA411D91121100F5E8D2 /* TextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E5CA401D91121100F5E8D2 /* TextField.xib */; };
+		90E5CA431D91121E00F5E8D2 /* Subheading.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E5CA421D91121E00F5E8D2 /* Subheading.xib */; };
+		90E5CA451D91125600F5E8D2 /* KeywordTagsField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E5CA441D91125600F5E8D2 /* KeywordTagsField.xib */; };
+		90E5CA471D91128E00F5E8D2 /* SwitchField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E5CA461D91128E00F5E8D2 /* SwitchField.xib */; };
+		90E5CA491D9112A500F5E8D2 /* OptionsListField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E5CA481D9112A500F5E8D2 /* OptionsListField.xib */; };
+		90E5CA4B1D91133A00F5E8D2 /* OptionsField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E5CA4A1D91133A00F5E8D2 /* OptionsField.xib */; };
+		90E5CA4D1D91138D00F5E8D2 /* ContactInfoField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E5CA4C1D91138D00F5E8D2 /* ContactInfoField.xib */; };
+		90E5CA4F1D9113D900F5E8D2 /* Heading.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E5CA4E1D9113D900F5E8D2 /* Heading.xib */; };
+		90E5CA511D9113F500F5E8D2 /* MediaField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E5CA501D9113F500F5E8D2 /* MediaField.xib */; };
+		90E5CA531D91140700F5E8D2 /* InputField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E5CA521D91140700F5E8D2 /* InputField.xib */; };
 		92BD2CC622629855BD33C0B031E2983A /* feature-gray-40x63.png in Resources */ = {isa = PBXBuildFile; fileRef = 9991EFF13892E66ABC678894235A03F4 /* feature-gray-40x63.png */; };
 		94F78B53D89F609233D46CA0827DF181 /* map-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 02EB291ECE63D68CC2FDF232A5F35F91 /* map-icon.png */; };
 		97274ED093077A823B7201368491DF28 /* AttributeTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 075FEBC7DE4800DB200B8DDF54739088 /* AttributeTextFieldCell.m */; };
@@ -320,6 +331,17 @@
 		90D120511D3ECC04006BEC3E /* TextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextField.m; sourceTree = "<group>"; };
 		90D120581D3ED140006BEC3E /* Subheading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subheading.h; sourceTree = "<group>"; };
 		90D120591D3ED140006BEC3E /* Subheading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subheading.m; sourceTree = "<group>"; };
+		90E5CA3E1D91120400F5E8D2 /* Space.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Space.xib; sourceTree = "<group>"; };
+		90E5CA401D91121100F5E8D2 /* TextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextField.xib; sourceTree = "<group>"; };
+		90E5CA421D91121E00F5E8D2 /* Subheading.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Subheading.xib; sourceTree = "<group>"; };
+		90E5CA441D91125600F5E8D2 /* KeywordTagsField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeywordTagsField.xib; sourceTree = "<group>"; };
+		90E5CA461D91128E00F5E8D2 /* SwitchField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchField.xib; sourceTree = "<group>"; };
+		90E5CA481D9112A500F5E8D2 /* OptionsListField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsListField.xib; sourceTree = "<group>"; };
+		90E5CA4A1D91133A00F5E8D2 /* OptionsField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsField.xib; sourceTree = "<group>"; };
+		90E5CA4C1D91138D00F5E8D2 /* ContactInfoField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactInfoField.xib; sourceTree = "<group>"; };
+		90E5CA4E1D9113D900F5E8D2 /* Heading.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Heading.xib; sourceTree = "<group>"; };
+		90E5CA501D9113F500F5E8D2 /* MediaField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediaField.xib; sourceTree = "<group>"; };
+		90E5CA521D91140700F5E8D2 /* InputField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputField.xib; sourceTree = "<group>"; };
 		95E967A8380704225FA65705B62DA5FD /* IOS-MapFeature-Form.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IOS-MapFeature-Form.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BF65633A36AF74C6F934FDF789690A /* GFKeywordCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GFKeywordCell.m; sourceTree = "<group>"; };
 		993610A290C481A234C19A831A8D0758 /* IOSQlite.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = IOSQlite.modulemap; sourceTree = "<group>"; };
@@ -472,10 +494,21 @@
 		092529A80DEF58786F174EDC50139220 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				90E5CA521D91140700F5E8D2 /* InputField.xib */,
+				90E5CA501D9113F500F5E8D2 /* MediaField.xib */,
+				90E5CA4E1D9113D900F5E8D2 /* Heading.xib */,
+				90E5CA481D9112A500F5E8D2 /* OptionsListField.xib */,
+				90E5CA4C1D91138D00F5E8D2 /* ContactInfoField.xib */,
+				90E5CA461D91128E00F5E8D2 /* SwitchField.xib */,
 				CEB4ABEC40F18B69DC56BB3DF65F8EB2 /* UserForm.storyboard */,
 				1CC585BE3FDFC37CD93B886A54F4DD18 /* UserItemDetail.storyboard */,
 				310483BACA52DCC9CA991E9250C1B6E9 /* UserLibrary.storyboard */,
 				323D7B7C67DE0CF5DBED8F9FE190BEA0 /* Pod */,
+				90E5CA3E1D91120400F5E8D2 /* Space.xib */,
+				90E5CA401D91121100F5E8D2 /* TextField.xib */,
+				90E5CA441D91125600F5E8D2 /* KeywordTagsField.xib */,
+				90E5CA421D91121E00F5E8D2 /* Subheading.xib */,
+				90E5CA4A1D91133A00F5E8D2 /* OptionsField.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1159,7 +1192,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90E5CA4B1D91133A00F5E8D2 /* OptionsField.xib in Resources */,
+				90E5CA491D9112A500F5E8D2 /* OptionsListField.xib in Resources */,
+				90E5CA511D9113F500F5E8D2 /* MediaField.xib in Resources */,
+				90E5CA4F1D9113D900F5E8D2 /* Heading.xib in Resources */,
+				90E5CA531D91140700F5E8D2 /* InputField.xib in Resources */,
+				90E5CA4D1D91138D00F5E8D2 /* ContactInfoField.xib in Resources */,
 				6AEE8B72AC82442061F8AD1F4AA92BD0 /* HTMLParser.bundle in Resources */,
+				90E5CA3F1D91120400F5E8D2 /* Space.xib in Resources */,
+				90E5CA411D91121100F5E8D2 /* TextField.xib in Resources */,
+				90E5CA431D91121E00F5E8D2 /* Subheading.xib in Resources */,
+				90E5CA471D91128E00F5E8D2 /* SwitchField.xib in Resources */,
+				90E5CA451D91125600F5E8D2 /* KeywordTagsField.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

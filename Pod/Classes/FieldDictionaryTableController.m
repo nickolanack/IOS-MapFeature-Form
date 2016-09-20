@@ -23,6 +23,22 @@
     
     @try{
         cell= [tableView dequeueReusableCellWithIdentifier:[fieldMetadata objectForKey:@"identifier"]];
+        
+        if(cell==nil){
+        
+            if (cell == nil) {
+                
+               
+
+                [tableView registerNib: [UINib nibWithNibName:[fieldMetadata objectForKey:@"identifier"] bundle:nil]forCellReuseIdentifier:[fieldMetadata objectForKey:@"identifier"]];
+                 cell= [tableView dequeueReusableCellWithIdentifier:[fieldMetadata objectForKey:@"identifier"]];
+                
+                
+            }
+            
+        }
+        
+        
     } @catch(NSException *e){
         
         @throw e;

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FeatureFormDatasource.h"
 
 @interface ContactInfoViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@property (unsafe_unretained, nonatomic) IBOutlet UITableView *tableView;
 
 @end

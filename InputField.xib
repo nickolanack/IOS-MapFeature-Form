@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="InputField" id="RiF-4q-L8C" customClass="GFTitleCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RiF-4q-L8C" id="5Um-pl-IpQ">
+                <frame key="frameInset" width="375" height="69"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="add a value" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wGM-Gg-6ca">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="M5f-9s-s12"/>
+                        </constraints>
+                        <color key="textColor" red="0.074198982979999994" green="0.23676062480000001" blue="0.41775645379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
+                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                        <connections>
+                            <action selector="onEditTitle:" destination="RiF-4q-L8C" eventType="editingChanged" id="m4u-fP-hfJ"/>
+                            <outlet property="delegate" destination="RiF-4q-L8C" id="nsR-kG-2Bh"/>
+                        </connections>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="wGM-Gg-6ca" firstAttribute="leading" secondItem="5Um-pl-IpQ" secondAttribute="leadingMargin" constant="12" id="GwP-iW-FnT"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="wGM-Gg-6ca" secondAttribute="trailing" constant="12" id="Hlt-A0-6ts"/>
+                    <constraint firstItem="wGM-Gg-6ca" firstAttribute="centerY" secondItem="5Um-pl-IpQ" secondAttribute="centerY" id="Rrj-kP-I4X"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="titleField" destination="wGM-Gg-6ca" id="b2e-17-7PN"/>
+            </connections>
+            <point key="canvasLocation" x="63.5" y="-382"/>
+        </tableViewCell>
+    </objects>
+</document>

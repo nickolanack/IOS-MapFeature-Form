@@ -23,7 +23,7 @@
         fieldName=field;
     }
     
-    NSNumber *value=[self.delegate getFormDataForKey:fieldName];
+    NSString *value=[self.delegate getFormDataForKey:fieldName];
   
     
     if(value==nil){
