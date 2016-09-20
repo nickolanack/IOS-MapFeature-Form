@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GFDelegateCell.h"
+#import "UserInputFeatureField.h"
 #import "FeatureField.h"
 
-@interface KeywordTagsField : UITableViewCell<GFDelegateCell, FeatureField, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface KeywordTagsField : UITableViewCell<UserInputFeatureField, FeatureField, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property NSString *fieldName;
 

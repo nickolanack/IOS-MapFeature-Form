@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GFDelegateCell.h"
+#import "UserInputFeatureField.h"
 #import "FeatureField.h"
 
-@interface SwitchField : UITableViewCell<GFDelegateCell, FeatureField>
+@interface SwitchField : UITableViewCell<UserInputFeatureField, FeatureField>
 
 @property NSString *fieldName;
 

@@ -15,11 +15,7 @@
 
 
 
-- (IBAction)onEditTitle:(id)sender {
-    
-    [self.delegate.details setObject:self.titleField.text forKey:fieldName];
-    
-}
+
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField endEditing:YES];
@@ -46,12 +42,8 @@
 
     
     
-    NSString *value=nil;
-    NSDictionary *details=self.delegate.details;
-    
-    if(details!=nil){
-        value=[details objectForKey:fieldName];
-    }
+    NSString *value=[self.delegate getFormDataForKey:fieldName];
+   
     
     if(value==nil){
         value=[fieldParameters objectForKey:@"value"];
@@ -61,6 +53,13 @@
         [self.titleField setText:value];
     }
     
+    
+}
+
+
+- (IBAction)onEditTitle:(id)sender {
+    
+    [self.delegate setFormData:self.titleField.text forKey:fieldName];
     
 }
 @end

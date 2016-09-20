@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Nick Blackwell. All rights reserved.
 //
 
+//@deprecated
+
 #import "AttributeMultiTextFieldCell.h"
 
 
@@ -58,9 +60,9 @@
 }
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
     self.isEditing=true;
-    if(self.delegate.attributes==nil)self.delegate.attributes  =[[NSMutableDictionary alloc] initWithDictionary:@{@"keywords":@[]}];
+    //if(self.delegate.attributes==nil)self.delegate.attributes  =[[NSMutableDictionary alloc] initWithDictionary:@{@"keywords":@[]}];
     NSArray *k=nil;
-    k=[self.delegate.attributes valueForKey:@"keywords"];
+    //k=[self.delegate.attributes valueForKey:@"keywords"];
     if(k==nil){
         
         k=@[];
@@ -83,7 +85,7 @@
         [self.keywords removeLastObject];
     }
     
-    [self.delegate.attributes setValue:[[NSArray alloc] initWithArray:self.keywords] forKey:@"keywords"];
+    //[self.delegate.attributes setValue:[[NSArray alloc] initWithArray:self.keywords] forKey:@"keywords"];
   
     [self.tableView reloadData];
     self.isEditing=false;

@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GFDelegateCell.h"
+#import "UserInputFeatureField.h"
 
-@interface GFKeywordCell : UITableViewCell<GFDelegateCell>
+@interface GFKeywordCell : UITableViewCell<UserInputFeatureField>
 
 @property (weak, nonatomic) IBOutlet UILabel *value;
 

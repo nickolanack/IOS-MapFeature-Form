@@ -1,5 +1,5 @@
 //
-//  GFDelegateCell.h
+//  UserInputFeatureField.h
 //  GeoFormsMappit
 //
 //  Created by Nick Blackwell on 2014-08-08.
@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FeatureViewController.h"
+#import "FeatureFormDatasource.h"
+#import "FeatureField.h"
 
-@protocol GFDelegateCell <NSObject>
+@protocol UserInputFeatureField <FeatureField>
 
-@property FeatureViewController *delegate;
+@property id<FeatureFormDatasource> delegate;
 @property UITableView *tableView;
 
 @end

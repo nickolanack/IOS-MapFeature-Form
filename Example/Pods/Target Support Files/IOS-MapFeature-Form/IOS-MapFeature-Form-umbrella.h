@@ -5,7 +5,7 @@
 #import "FeatureCell.h"
 #import "FeatureDetailViewController.h"
 #import "FeatureViewController.h"
-#import "GFDelegateCell.h"
+#import "UserInputFeatureField.h"
 #import "GFKeywordCell.h"
 #import "GFTitleCell.h"
 #import "MapFormDelegate.h"

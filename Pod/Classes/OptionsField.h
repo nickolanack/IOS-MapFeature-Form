@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GFDelegateCell.h"
+#import "UserInputFeatureField.h"
 #import "FeatureField.h"
 
-@interface OptionsField : UITableViewCell<GFDelegateCell, FeatureField>
+@interface OptionsField : UITableViewCell<UserInputFeatureField, FeatureField>
 @property NSString *fieldName;
 @property (unsafe_unretained, nonatomic) IBOutlet UISegmentedControl *optionField;
 - (IBAction)onChange:(id)sender;

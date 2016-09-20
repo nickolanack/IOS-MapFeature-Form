@@ -35,7 +35,6 @@
     
     
     NSNumber *value=nil; //use NSNumber so it can be nil.
-    NSDictionary *details=self.delegate.details;
     
     
     NSString *values=[fieldParameters objectForKey:@"values"];
@@ -50,15 +49,17 @@
         [self.optionField insertSegmentWithTitle:[_values objectAtIndex:i] atIndex:i animated:false];
     }
     
-    if(details!=nil){
-        NSString *strValue=[details objectForKey:fieldName];
-        if(strValue){
-            int index=[_values indexOfObject:strValue];
-            if(index>=0&&index!=NSNotFound){
-                value=[NSNumber numberWithInteger:index];
-            }
+    
+    
+
+    NSString *strValue=[self.delegate getFormDataForKey:fieldName];
+    if(strValue){
+        int index=[_values indexOfObject:strValue];
+        if(index>=0&&index!=NSNotFound){
+            value=[NSNumber numberWithInteger:index];
         }
     }
+  
     
     if(value==nil){
         value=[fieldParameters objectForKey:@"value"];
@@ -66,14 +67,14 @@
     
     if(value){
         [self.optionField setSelectedSegmentIndex:[value integerValue]];
-        [self.delegate.details setObject:[_values objectAtIndex:[value integerValue]] forKey:fieldName];
+        [self.delegate setFormData:[_values objectAtIndex:[value integerValue]] forKey:fieldName];
     }
     
 }
 - (IBAction)onChange:(id)sender {
     
-    
-    [self.delegate.details setObject:[_values objectAtIndex:[self.optionField selectedSegmentIndex]] forKey:fieldName];
+    [self.delegate setFormData:[_values objectAtIndex:[self.optionField selectedSegmentIndex]] forKey:fieldName];
+
     
     
 }

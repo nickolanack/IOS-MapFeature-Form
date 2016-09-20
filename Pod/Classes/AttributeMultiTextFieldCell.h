@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GFDelegateCell.h"
+#import "UserInputFeatureField.h"
 
-@interface AttributeMultiTextFieldCell : UITableViewCell<GFDelegateCell, UITextFieldDelegate>
+@interface AttributeMultiTextFieldCell : UITableViewCell<UserInputFeatureField, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *keywordField;
 - (IBAction)onEditKeyword:(id)sender;
 

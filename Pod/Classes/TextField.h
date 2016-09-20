@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GFDelegateCell.h"
+#import "UserInputFeatureField.h"
 #import "FeatureField.h"
 
-@interface TextField : UITableViewCell<GFDelegateCell, UITextViewDelegate, FeatureField>
+@interface TextField : UITableViewCell<UserInputFeatureField, UITextViewDelegate, FeatureField>
 
 @property NSString *fieldName;
 @property (unsafe_unretained, nonatomic) IBOutlet UITextView *textField;

@@ -31,12 +31,8 @@
     }
     
     
-    NSNumber *value=nil;
-    NSDictionary *details=self.delegate.details;
-    
-    if(details!=nil){
-        value=[details objectForKey:fieldName];
-    }
+    NSNumber *value=[self.delegate getFormDataForKey:fieldName];
+   
     
     if(value==nil){
         value=[fieldParameters objectForKey:@"value"];
@@ -44,13 +40,13 @@
     
     if(value){
         [self.switchField setOn:[value boolValue]];
-        [self.delegate.details setObject:value forKey:fieldName];
+        [self.delegate setFormData:value forKey:fieldName];
     }
     
 }
 
 
 - (IBAction)onToggleSwitch:(id)sender {
-    [self.delegate.details setObject:[NSNumber numberWithBool:[_switchField isSelected]] forKey:fieldName];
+     [self.delegate setFormData:[NSNumber numberWithBool:[_switchField isOn]] forKey:fieldName];
 }
 @end

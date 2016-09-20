@@ -44,17 +44,16 @@
     
     
     NSNumber *value=nil;
-    NSDictionary *details=self.delegate.details;
-    
-    if(details!=nil){
-        NSString *strValue=[details objectForKey:fieldName];
+    NSString *strValue=[self.delegate getFormDataForKey:fieldName];
+
+   
         if(strValue){
             int index=[_values indexOfObject:strValue];
             if(index!=NSNotFound){
                 value=[NSNumber numberWithInteger:index];
             }
         }
-    }
+ 
     
     if(value==nil){
         value=[fieldParameters objectForKey:@"value"];
@@ -62,7 +61,8 @@
     
     if(value){
         [self.optionsField selectRow:[value integerValue] inComponent:0 animated:true];
-        [self.delegate.details setObject:[_values objectAtIndex:[value integerValue]] forKey:fieldName];
+        
+        [self.delegate setFormData:[_values objectAtIndex:[value integerValue]] forKey:fieldName];
     }
     
     
@@ -82,7 +82,7 @@
     return _values.count;
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    [self.delegate.details setObject:[_values objectAtIndex:row] forKey:fieldName];
+    [self.delegate setFormData:[_values objectAtIndex:row] forKey:fieldName];
 }
 
 - (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{

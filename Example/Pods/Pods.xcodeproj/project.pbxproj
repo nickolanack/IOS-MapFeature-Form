@@ -45,7 +45,7 @@
 		826D2934D4F73482D7165A8D92C31F4E /* IOSQlite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E82CAD80E45A6CAE855F987E5E88E1 /* IOSQlite.framework */; };
 		82C31F07CCA3C29BEAAF425C4973092A /* HTMLParser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2FE89F0462E413CB3AF4625632E06B /* HTMLParser-dummy.m */; };
 		82F82257362948E029A4538CE4C3A693 /* trash.png in Resources */ = {isa = PBXBuildFile; fileRef = 85559A2B71046C8544E2F79F99F33A1C /* trash.png */; };
-		86A61388125820F5FA32A544E55BD83A /* GFDelegateCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D8773F8DC53B9E3DC2D41FDAE1C3B01C /* GFDelegateCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86A61388125820F5FA32A544E55BD83A /* UserInputFeatureField.h in Headers */ = {isa = PBXBuildFile; fileRef = D8773F8DC53B9E3DC2D41FDAE1C3B01C /* UserInputFeatureField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8ABA3AD5EF572D2C123B6A694BC9D962 /* AttributeMultiTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D176533C746C4BAEFBCFC087C8BD61EA /* AttributeMultiTextFieldCell.m */; };
 		8C272C9ACBF0986AFCBBADA87405443B /* sqlite3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27754310261D43B109D3AC34F3B58A21 /* sqlite3.framework */; };
 		901013E71CC6A42700EB5D78 /* MediaItemsTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 901013E51CC6A42700EB5D78 /* MediaItemsTableViewCell.h */; };
@@ -56,6 +56,8 @@
 		902AA32D1D3B5A720092C349 /* OptionsListField.m in Sources */ = {isa = PBXBuildFile; fileRef = 902AA32B1D3B5A720092C349 /* OptionsListField.m */; };
 		905B4E551D8C7B39004E6777 /* ContactInfoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 905B4E531D8C7B39004E6777 /* ContactInfoViewController.h */; };
 		905B4E561D8C7B39004E6777 /* ContactInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 905B4E541D8C7B39004E6777 /* ContactInfoViewController.m */; };
+		905B4E611D90790B004E6777 /* FieldDictionaryTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 905B4E5F1D90790B004E6777 /* FieldDictionaryTableController.h */; };
+		905B4E621D90790B004E6777 /* FieldDictionaryTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 905B4E601D90790B004E6777 /* FieldDictionaryTableController.m */; };
 		905EBC1D1D5D37DA00EC074E /* OptionsListField.h in Headers */ = {isa = PBXBuildFile; fileRef = 905EBC1B1D5D37DA00EC074E /* OptionsListField.h */; };
 		905EBC1E1D5D37DA00EC074E /* OptionsListField.m in Sources */ = {isa = PBXBuildFile; fileRef = 905EBC1C1D5D37DA00EC074E /* OptionsListField.m */; };
 		905EBC211D76029E00EC074E /* KeywordTagsField.h in Headers */ = {isa = PBXBuildFile; fileRef = 905EBC1F1D76029E00EC074E /* KeywordTagsField.h */; };
@@ -300,6 +302,9 @@
 		902AA32B1D3B5A720092C349 /* OptionsListField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsListField.m; sourceTree = "<group>"; };
 		905B4E531D8C7B39004E6777 /* ContactInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactInfoViewController.h; sourceTree = "<group>"; };
 		905B4E541D8C7B39004E6777 /* ContactInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactInfoViewController.m; sourceTree = "<group>"; };
+		905B4E5F1D90790B004E6777 /* FieldDictionaryTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldDictionaryTableController.h; sourceTree = "<group>"; };
+		905B4E601D90790B004E6777 /* FieldDictionaryTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldDictionaryTableController.m; sourceTree = "<group>"; };
+		905B4E631D90815E004E6777 /* FeatureFormDatasource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureFormDatasource.h; sourceTree = "<group>"; };
 		905EBC1B1D5D37DA00EC074E /* OptionsListField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsListField.h; sourceTree = "<group>"; };
 		905EBC1C1D5D37DA00EC074E /* OptionsListField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsListField.m; sourceTree = "<group>"; };
 		905EBC1F1D76029E00EC074E /* KeywordTagsField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordTagsField.h; sourceTree = "<group>"; };
@@ -348,7 +353,7 @@
 		D5839BDBBD46C69D9CF947AF4C6577FE /* Pods-IOS-MapFeature-Form_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-IOS-MapFeature-Form_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D62237F433059DD1D38BA6F2AE688401 /* Pods-IOS-MapFeature-Form_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-IOS-MapFeature-Form_Tests-umbrella.h"; sourceTree = "<group>"; };
 		D85CA2E0FC7CBF5D213EB8A879F4FF6D /* Pods-IOS-MapFeature-Form_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IOS-MapFeature-Form_Tests-dummy.m"; sourceTree = "<group>"; };
-		D8773F8DC53B9E3DC2D41FDAE1C3B01C /* GFDelegateCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GFDelegateCell.h; sourceTree = "<group>"; };
+		D8773F8DC53B9E3DC2D41FDAE1C3B01C /* UserInputFeatureField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UserInputFeatureField.h; sourceTree = "<group>"; };
 		D8963C81905AE97DD82DDFDDB9B01B71 /* sqlite3.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = sqlite3.xcconfig; sourceTree = "<group>"; };
 		D8F21336802F0E505EB3A8F5EE7333B4 /* IOS-MapFeature-Form.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "IOS-MapFeature-Form.modulemap"; sourceTree = "<group>"; };
 		DA2FE89F0462E413CB3AF4625632E06B /* HTMLParser-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HTMLParser-dummy.m"; sourceTree = "<group>"; };
@@ -639,7 +644,7 @@
 				2895048C8AD12CC6DDD3D3F4259EE128 /* FeatureDetailViewController.m */,
 				3D2579CFF710A2DADFCDA743FEA00B02 /* FeatureViewController.h */,
 				7349406A78E7CFD7B65ACB52CB0FE33C /* FeatureViewController.m */,
-				D8773F8DC53B9E3DC2D41FDAE1C3B01C /* GFDelegateCell.h */,
+				D8773F8DC53B9E3DC2D41FDAE1C3B01C /* UserInputFeatureField.h */,
 				CB2DD28C998C5D5994A1CA72A2D51FAF /* GFKeywordCell.h */,
 				96BF65633A36AF74C6F934FDF789690A /* GFKeywordCell.m */,
 				C0FE38A64114C6A8A69E58B2D93AA399 /* GFTitleCell.h */,
@@ -669,6 +674,9 @@
 				90D120511D3ECC04006BEC3E /* TextField.m */,
 				90D120581D3ED140006BEC3E /* Subheading.h */,
 				90D120591D3ED140006BEC3E /* Subheading.m */,
+				905B4E5F1D90790B004E6777 /* FieldDictionaryTableController.h */,
+				905B4E601D90790B004E6777 /* FieldDictionaryTableController.m */,
+				905B4E631D90815E004E6777 /* FeatureFormDatasource.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -821,7 +829,7 @@
 				6CCA8A22D321C6CDB1D9245509C6AFC8 /* FeatureCell.h in Headers */,
 				B2FCA51B02848F461D3130431C25A817 /* FeatureDetailViewController.h in Headers */,
 				A137D81E05AC46FE40216E0248C16DC7 /* FeatureViewController.h in Headers */,
-				86A61388125820F5FA32A544E55BD83A /* GFDelegateCell.h in Headers */,
+				86A61388125820F5FA32A544E55BD83A /* UserInputFeatureField.h in Headers */,
 				3AEA5F1A80929605DA4B3D34EDA7350B /* GFKeywordCell.h in Headers */,
 				34B4D5D2102BB60FABBF4D462A3755F1 /* GFTitleCell.h in Headers */,
 				3AE59907952C927B00C5C06949200D8A /* IOS-MapFeature-Form-umbrella.h in Headers */,
@@ -865,6 +873,7 @@
 				902AA32C1D3B5A720092C349 /* OptionsListField.h in Headers */,
 				90D120471D3AE1F5006BEC3E /* FeatureField.h in Headers */,
 				906AA1961D87527800E299C4 /* ContactInfoField.h in Headers */,
+				905B4E611D90790B004E6777 /* FieldDictionaryTableController.h in Headers */,
 				905B4E551D8C7B39004E6777 /* ContactInfoViewController.h in Headers */,
 				0B89471C1C4715126CEE13A49EB70C44 /* HTMLParser-umbrella.h in Headers */,
 				901013E71CC6A42700EB5D78 /* MediaItemsTableViewCell.h in Headers */,
@@ -1294,6 +1303,7 @@
 				90D120531D3ECC04006BEC3E /* TextField.m in Sources */,
 				82C31F07CCA3C29BEAAF425C4973092A /* HTMLParser-dummy.m in Sources */,
 				902AA32D1D3B5A720092C349 /* OptionsListField.m in Sources */,
+				905B4E621D90790B004E6777 /* FieldDictionaryTableController.m in Sources */,
 				905EBC221D76029E00EC074E /* KeywordTagsField.m in Sources */,
 				905B4E561D8C7B39004E6777 /* ContactInfoViewController.m in Sources */,
 				90D1205B1D3ED140006BEC3E /* Subheading.m in Sources */,

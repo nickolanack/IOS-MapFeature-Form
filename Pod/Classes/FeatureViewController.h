@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "UsersItemListViewController.h"
+#import "FeatureFormDatasource.h"
 
-@interface FeatureViewController : UIViewController<UIImagePickerControllerDelegate, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate>
+@interface FeatureViewController : UIViewController<UIImagePickerControllerDelegate, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, FeatureFormDatasource>
 
 @property UsersItemListViewController *delegate;
 

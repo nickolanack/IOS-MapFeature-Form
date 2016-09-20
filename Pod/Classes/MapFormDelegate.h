@@ -23,7 +23,6 @@
 //-(void)uploadVideo:(NSURL *) video withProgressHandler:(void (^)(float percentFinished)) progress andCompletion:(void (^)(NSDictionary * response)) completion;
 
 
--(void)storeFormData:(NSDictionary *)data forForm:(NSString *) name withCompletion:(void (^)(NSDictionary * response)) completion;
 
 -(void)listUsersMenuItemsWithCompletion:(void (^)(NSArray * results)) completion;
 -(void)formatMenuItemsCell:(FeatureCell *)cell withData:(NSDictionary *)data;

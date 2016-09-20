@@ -7,11 +7,12 @@
 //
 
 #import "FeatureViewController.h"
-#import "GFDelegateCell.h"
+#import "UserInputFeatureField.h"
 #import "GFKeywordCell.h"
 #import "GFTitleCell.h"
 #import "MapFormDelegate.h"
 #import "MediaItemsTableViewCell.h"
+#import "FieldDictionaryTableController.h"
 
 
 
@@ -29,6 +30,8 @@
 @property UIView *activeView;
 @property bool useCurrentLocation;
 
+@property FieldDictionaryTableController * dictionaryTable;
+
 @end
 
 @implementation FeatureViewController
@@ -42,6 +45,7 @@
         @throw [[NSException alloc] initWithName:@"Initialize Form Parameters Exception" reason:@"It is too late to initialize form parameters now" userInfo:nil];
     }
     _formParameters=[self checkFormParameters:formParameters];
+    
 }
 
 -(void)setFormData:(NSDictionary *)formData{
@@ -73,8 +77,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     
-    
-    
+    _dictionaryTable=[[FieldDictionaryTableController alloc] init];
     
     self.navigationItem.hidesBackButton=true;
     self.tableView.editing=true;
@@ -306,6 +309,28 @@
     
 }
 
+#pragma mark FeatureField methods
+
+
+-(id) getFormDataForKey:(NSString *)key{
+    
+    
+    
+    
+    if(details!=nil){
+        return [details objectForKey:key];
+    }
+    
+    
+    return nil;
+
+}
+-(void) setFormData:(id) object forKey:(NSString *)key{
+    
+    [details setObject:object forKey:key];
+
+
+}
 
 
 
@@ -313,12 +338,9 @@
 #pragma mark UITableViewDataSource
 
 
--(int)indexOfFirstAttribute{
-    return 4;
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return false;
 }
-
-
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
@@ -402,54 +424,30 @@
     
     NSDictionary *fieldMetadata=(NSDictionary *)[[self getFieldMetadataArray] objectAtIndex:row];
     
-    @try{
-        cell= [tableView dequeueReusableCellWithIdentifier:[fieldMetadata objectForKey:@"identifier"]];
-    } @catch(NSException *e){
-        
-        @throw e;
-    }
-    
-    if([cell conformsToProtocol:@protocol(GFDelegateCell)]){
-        [((id<GFDelegateCell>)cell) setDelegate:self];
-        [((id<GFDelegateCell>)cell) setTableView:tableView];
-    }
-    
-    
-    if ([cell conformsToProtocol:@protocol(FeatureField)]) {
-        
-        id<FeatureField> field=cell;
-        [field setFieldParameters:fieldMetadata];
-        
-    }else{
+   
+    cell=[_dictionaryTable tableView:tableView cellForRowAtIndexPath:indexPath withFieldMetadata:fieldMetadata andDelegate:self];
         
         
-        if([cell isKindOfClass:[MediaItemsTableViewCell class]]){
-            
-            NSString *imageLabel=@"Take Photo";
+    if([cell isKindOfClass:[MediaItemsTableViewCell class]]){
+        
+        NSString *imageLabel=@"Take Photo";
+        
+        if(![self allowCameraPicker]){
+            imageLabel=@"Add Photo";
+        }
+        
+        if([self hasImage]){
+            [((MediaItemsTableViewCell *) cell).mediaImage setImage:[self getImage]];
+            imageLabel=@"Retake";
             
             if(![self allowCameraPicker]){
-                imageLabel=@"Add Photo";
+                imageLabel=@"Change Photo";
             }
-            
-            if([self hasImage]){
-                [((MediaItemsTableViewCell *) cell).mediaImage setImage:[self getImage]];
-                imageLabel=@"Retake";
-                
-                if(![self allowCameraPicker]){
-                    imageLabel=@"Change Photo";
-                }
 
-            }
-            
-            [((MediaItemsTableViewCell *) cell).takePhotoButton setTitle:imageLabel forState:UIControlStateNormal];
-            
-        }else{
-        
-            if(cell.textLabel){
-               [cell.textLabel setText:[fieldMetadata objectForKey:@"value"]]; 
-            }
-            
         }
+        
+        [((MediaItemsTableViewCell *) cell).takePhotoButton setTitle:imageLabel forState:UIControlStateNormal];
+        
     }
     
     return cell;
@@ -473,59 +471,10 @@
         return [height floatValue];
     }
     
-    int firstAttributeIndex=[self indexOfFirstAttribute];
-    
-    if(row==0)return 35;
-    if(row>=firstAttributeIndex){
-        NSArray *keywords=[attributes objectForKey:@"keywords"];
-        if(keywords!=nil&&[keywords count]){
-            
-            if(row<(firstAttributeIndex+[keywords count])){
-                return 35;
-            }
-            
-        }
-    }
-    return tableView.rowHeight;
+    return 35;
 }
 
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSInteger row=indexPath.row;
-    
-    int firstAttributeIndex=[self indexOfFirstAttribute];
-
-    
-    if(row>1){
-        NSArray *keywords=[attributes objectForKey:@"keywords"];
-        if(keywords!=nil&&[keywords count]){
-            
-            if(row<(firstAttributeIndex+[keywords count])){
-                return YES;
-            }
-            
-        }
-    }
-    return NO;
-}
-
-
--(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
-    if(editingStyle==UITableViewCellEditingStyleDelete){
-        
-        int firstAttributeIndex=[self indexOfFirstAttribute];
-        
-        NSInteger index=indexPath.row-firstAttributeIndex;
-        NSMutableArray *a=[[NSMutableArray alloc] initWithArray:[attributes objectForKey:@"keywords"]];
-        [a removeObjectAtIndex:index];
-        [attributes setObject:[[NSArray alloc] initWithArray:a] forKey:@"keywords"];
-        [self.tableView reloadData];
-    }
-    
-}
 
 
 
@@ -602,7 +551,7 @@
         if([_formDelegate respondsToSelector:@selector(menuFormWasDeniedAccessToLocation:)]){
            return [_formDelegate menuFormWasDeniedAccessToLocation:self];
         }else{
-            @throw [[NSException alloc] initWithName:@"Denied access to users current location" reason:@"Cannot continue without access to the allowing access to location" userInfo:nil];
+            @throw [[NSException alloc] initWithName:@"Denied access to users current location" reason:@"Cannot continue without allowing access to location" userInfo:nil];
         }
     }
     

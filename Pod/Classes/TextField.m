@@ -23,12 +23,8 @@
         fieldName=field;
     }
     
-    NSNumber *value=nil;
-    NSDictionary *details=self.delegate.details;
-    
-    if(details!=nil){
-        value=[details objectForKey:fieldName];
-    }
+    NSNumber *value=[self.delegate getFormDataForKey:fieldName];
+  
     
     if(value==nil){
         value=[fieldParameters objectForKey:@"value"];
@@ -36,7 +32,7 @@
     
     if(value){
         [self.textField setText:value];
-        [self.delegate.details setObject:value forKey:fieldName];
+        [self.delegate setFormData:value forKey:fieldName];
     }
     
     
@@ -55,8 +51,8 @@
         [textView resignFirstResponder];
     }
     
-    [self.delegate.details setObject:textView.text forKey:fieldName];
-    
+
+    [self.delegate setFormData:textView.text forKey:fieldName];
 }
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView{

@@ -54,17 +54,15 @@
     
     
     NSNumber *value=nil;
-    NSDictionary *details=self.delegate.details;
     
-    if(details!=nil){
-        NSString *strValue=[details objectForKey:fieldName];
-        if(strValue){
-            int index=[_values indexOfObject:strValue];
-            if(index!=NSNotFound&&index>=0){
-                value=[NSNumber numberWithInteger:index];
-            }
+    NSString *strValue=[self.delegate getFormDataForKey:fieldName];
+    if(strValue){
+        int index=[_values indexOfObject:strValue];
+        if(index!=NSNotFound&&index>=0){
+            value=[NSNumber numberWithInteger:index];
         }
     }
+
     
     if(value==nil){
         value=[fieldParameters objectForKey:@"value"];
@@ -72,7 +70,7 @@
     
     if(value){
         _selectedIndex=[value integerValue];
-        [self.delegate.details setObject:[_values objectAtIndex:[value integerValue]] forKey:fieldName];
+        [self.delegate setFormData:[_values objectAtIndex:[value integerValue]] forKey:fieldName];
     }
 
 }
@@ -119,7 +117,9 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     _selectedIndex=indexPath.row;
-    [self.delegate.details setObject:[_values objectAtIndex:_selectedIndex] forKey:fieldName];
+    
+    [self.delegate setFormData:[_values objectAtIndex:_selectedIndex] forKey:fieldName];
+    
     TileSelectionCollectionViewCell *cell =[collectionView cellForItemAtIndexPath:indexPath];
     [cell.button setSelected:true];
     

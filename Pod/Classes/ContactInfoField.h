@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GFDelegateCell.h"
+#import "UserInputFeatureField.h"
 #import "FeatureField.h"
 
-@interface ContactInfoField : UITableViewCell<GFDelegateCell, FeatureField>
+@interface ContactInfoField : UITableViewCell<UserInputFeatureField, FeatureField>
 @property NSString *fieldName;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *contactButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *contactIcon;

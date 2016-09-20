@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GFDelegateCell.h"
+#import "UserInputFeatureField.h"
 #import "FeatureField.h"
 
-@interface GFTitleCell : UITableViewCell<GFDelegateCell, UITextFieldDelegate, FeatureField>
+@interface GFTitleCell : UITableViewCell<UserInputFeatureField, UITextFieldDelegate, FeatureField>
 
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
 
