@@ -1,4 +1,4 @@
-//
+ //
 //  ContactInfoViewController.m
 //  Pods
 //
@@ -18,57 +18,18 @@
 
 @implementation ContactInfoViewController
 
+@synthesize formMetadata;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     _dictionaryTable=[[FieldDictionaryTableController alloc] init];
     
-    
-//    [self.tableView registerNib: [[NSBundle mainBundle] loadNibNamed:@"Subheading" owner:self options:nil] forCellReuseIdentifier:@"Subheading"];
-//    
-//    [self.tableView registerNib: [[NSBundle mainBundle] loadNibNamed:@"TextField" owner:self options:nil] forCellReuseIdentifier:@"TextField"];
-//    
-//    [self.tableView registerNib: [[NSBundle mainBundle] loadNibNamed:@"Space" owner:self options:nil] forCellReuseIdentifier:@"Space"];
-   
-    
-    
 }
 
 -(NSArray *)getMetadata{
-    return @[
-             @{
-                 @"identifier":@"Subheading",
-                 @"value":@"Other Witnesses",
-                 @"rowHeight":[NSNumber numberWithFloat:35]
-                 },
-             @{
-                 @"identifier":@"TextField",
-                 @"field":@"rappAttributes.otherWitnesses",
-                 @"placeholder":@"add description",
-                 @"value":@"",
-                 @"rowHeight":[NSNumber numberWithFloat:60],
-                 },
-             
-             @{
-                 @"identifier":@"Subheading",
-                 @"value":@"Additional Comments",
-                 @"rowHeight":[NSNumber numberWithFloat:35]
-                 },
-             @{
-                 @"identifier":@"TextField",
-                 @"field":@"rappAttributes.comments",
-                 @"placeholder":@"add description",
-                 @"value":@"",
-                 @"rowHeight":[NSNumber numberWithFloat:60],
-                 },
-             
-             @{
-                 @"identifier":@"Space",
-                 @"rowHeight":[NSNumber numberWithFloat:120],
-                 }
-             
-             ];
+    return formMetadata;
 }
 
 
@@ -85,10 +46,10 @@
 
 
 -(id) getFormDataForKey:(NSString *)key{
-
+    return nil;
 }
--(id) setFormData:(id) object forKey:(NSString *)key{
-
+-(void) setFormData:(id) object forKey:(NSString *)key{
+    
 }
 -(void) setActiveView:(UIView *)view{
 

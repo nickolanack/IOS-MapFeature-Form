@@ -83,7 +83,22 @@
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
-    TileSelectionCollectionViewCell *cell = (TileSelectionCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"DefaultKeyword" forIndexPath:indexPath];
+    TileSelectionCollectionViewCell *cell;
+    @try{
+     cell = (TileSelectionCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"KeywordTagsFieldCell" forIndexPath:indexPath];
+    }@catch(NSException *e){
+        
+        if(cell==nil){
+            
+            [collectionView registerNib:[UINib nibWithNibName:@"KeywordTagsFieldCell" bundle:nil] forCellWithReuseIdentifier:@"KeywordTagsFieldCell"];
+            
+            cell= [collectionView dequeueReusableCellWithReuseIdentifier:@"KeywordTagsFieldCell" forIndexPath:indexPath];
+            
+        }
+    }
+    
+    
+    
     
     [cell.label setText:[_values objectAtIndex:indexPath.row]];
     
@@ -109,6 +124,8 @@
     }else{
         [cell.button setSelected:false];
     }
+    
+    cell.button.layer.cornerRadius=cell.button.frame.size.height/2.0;
     
     return cell;
 

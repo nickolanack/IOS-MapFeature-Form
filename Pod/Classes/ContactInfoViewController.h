@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "FeatureFormDatasource.h"
 
-@interface ContactInfoViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface ContactInfoViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, FeatureFormDatasource>
 @property (unsafe_unretained, nonatomic) IBOutlet UITableView *tableView;
+
+@property NSDictionary *formMetadata;
+
+
 
 @end

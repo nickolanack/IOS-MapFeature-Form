@@ -14,37 +14,45 @@
 
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath withFieldMetadata:(NSDictionary *) fieldMetadata andDelegate:(id)delegate{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath withFieldMetadata:(NSDictionary *) fieldMetadata andDelegate:(id<FeatureFormDatasource>)delegate{
     
     
     UITableViewCell *cell=nil;
     NSInteger row=[indexPath row];
     
     
+    NSString *reuseIdentifier=[fieldMetadata objectForKey:@"identifier"];
+    
     @try{
-        cell= [tableView dequeueReusableCellWithIdentifier:[fieldMetadata objectForKey:@"identifier"]];
         
-        if(cell==nil){
-        
-            if (cell == nil) {
-                
-               
-
-                [tableView registerNib: [UINib nibWithNibName:[fieldMetadata objectForKey:@"identifier"] bundle:nil]forCellReuseIdentifier:[fieldMetadata objectForKey:@"identifier"]];
-                 cell= [tableView dequeueReusableCellWithIdentifier:[fieldMetadata objectForKey:@"identifier"]];
-                
-                
-            }
-            
-        }
+        /**
+         * Attempt to retrieve a field cell using reuse identifier from json.
+         */
+        cell= [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
         
         
     } @catch(NSException *e){
         
-        @throw e;
+        /**
+         * An exception is thrown if reuse identifier is unknown, so register it from json and try again.
+         */
+        
+       
+    }
+    
+    if(cell==nil){
+        
+        [tableView registerNib: [UINib nibWithNibName:reuseIdentifier bundle:nil]forCellReuseIdentifier:reuseIdentifier];
+        cell= [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+        
     }
     
     if([cell conformsToProtocol:@protocol(UserInputFeatureField)]){
+        
+        /**
+         * user input field is expected to set and get data from delegate. which is and instance of
+         */
+        
         [((id<UserInputFeatureField>)cell) setDelegate:delegate];
         [((id<UserInputFeatureField>)cell) setTableView:tableView];
     }

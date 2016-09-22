@@ -310,7 +310,9 @@
 }
 
 #pragma mark FeatureField methods
-
+-(UINavigationController *) getNavigationController{
+    return self.navigationController;
+}
 
 -(id) getFormDataForKey:(NSString *)key{
     

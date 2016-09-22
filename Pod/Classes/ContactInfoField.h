@@ -14,5 +14,8 @@
 @property NSString *fieldName;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *contactButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *contactIcon;
+- (IBAction)onTapContactInfoButton:(id)sender;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *labelField;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *icon;
 
 @end

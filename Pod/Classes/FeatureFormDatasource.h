@@ -14,7 +14,10 @@
 
 
 -(id) getFormDataForKey:(NSString *)key;
--(id) setFormData:(id) object forKey:(NSString *)key;
+-(void) setFormData:(id) object forKey:(NSString *)key;
 -(void) setActiveView:(UIView *)view;
+
+-(UINavigationController *) getNavigationController;
+
 
 @end

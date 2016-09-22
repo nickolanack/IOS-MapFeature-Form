@@ -7,6 +7,15 @@
 //
 
 #import "ContactInfoField.h"
+#import "ContactInfoViewController.h"
+
+
+@interface ContactInfoField ()
+
+@property NSDictionary *formMetadata;
+
+@end
+
 
 @implementation ContactInfoField
 @synthesize delegate, tableView, fieldName;
@@ -30,10 +39,20 @@
         fieldName=field;
     }
     
+    NSString *metadata=[fieldParameters objectForKey:@"formMetadata"];
+    if(metadata){
+        _formMetadata=metadata;
+    }
+    
     
     NSString *label=[fieldParameters objectForKey:@"label"];
     if(label){
+        [self.labelField setText:label];
+    }
     
+    NSString *iconStr=[fieldParameters objectForKey:@"icon"];
+    if(iconStr){
+        [self.icon setImage:[UIImage imageNamed:iconStr] forState:UIControlStateNormal];
     }
     
     
@@ -49,4 +68,17 @@
     
 }
 
+- (IBAction)onTapContactInfoButton:(id)sender {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"UserForm" bundle:nil];
+    ContactInfoViewController *myController = (ContactInfoViewController *)[storyboard instantiateViewControllerWithIdentifier:@"ContactForm"];
+    
+    
+    [myController setFormMetadata:_formMetadata];
+    
+    
+        [[self.delegate getNavigationController] pushViewController: myController animated:YES];
+    
+    
+}
 @end

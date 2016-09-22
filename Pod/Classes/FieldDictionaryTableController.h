@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FeatureFormDatasource.h"
 
 @interface FieldDictionaryTableController : NSObject
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath withFieldMetadata:(NSDictionary *) fieldMetadata andDelegate:(id)delegate;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath withFieldMetadata:(NSDictionary *) fieldMetadata andDelegate:(id<FeatureFormDatasource>)delegate;
 
 @end
